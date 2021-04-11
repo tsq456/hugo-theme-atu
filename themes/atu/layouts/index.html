@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+<div id="homepage">
+    <div class="content">
+        <article>
+        {{ range .Site.RegularPages }}
+            <a href="{{ .Permalink }}" style="display: block;">{{ .Title }}</a>
+            <i style="word-break:keep-all;">{{ .Summary | plainify }}</i>
+        {{ end }}
+        </article>   
+    </div>
+</div>
+    
+{{ end }}

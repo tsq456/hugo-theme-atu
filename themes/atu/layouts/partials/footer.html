@@ -1,0 +1,24 @@
+<footer id="footer">
+    {{/*  word counter  */}}
+    {{$scratch := newScratch}}
+    {{ range (where .Site.Pages "Kind" "page" )}}
+    {{$scratch.Add "total" .WordCount}}
+    {{ end }}
+
+    <p class="copyright">
+        共 {{ len (where .Site.RegularPages "Section" "posts") }} 篇文章,合计 {{$scratch.Get "total" }} 字<br>
+
+        {{ $uvURL := "https://docs.google.com/spreadsheets/d/1N8480w1hPyilUS4qK1rnSY6RiE-OX-2hy1glQCTRh_w/export?format=csv&gid=1124904396" }}
+        {{ $pvURL := "https://docs.google.com/spreadsheets/d/1N8480w1hPyilUS4qK1rnSY6RiE-OX-2hy1glQCTRh_w/export?format=csv&gid=1100827646" }}
+        {{ $uvcsv := getCSV "," $uvURL }}
+        {{ $pvcsv := getCSV "," $pvURL }}
+
+        本站访问量 {{ index ( index $pvcsv 11 ) 1 }}&nbsp;&nbsp;您是第 {{ index ( index $uvcsv 11 ) 1 }} 位访问者<br>
+
+       © Copyright 
+       {{ now.Format "2006"}}
+       {{ .Site.Params.Author }} · 
+       Powered by <a href="http://www.gohugo.io/">Hugo</a>
+    </p>
+    <script src="{{ "/js/prism.js" | relURL }}"></script>
+</footer>

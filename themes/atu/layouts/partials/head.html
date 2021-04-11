@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+<meta name="referrer" content="same-origin">
+{{ hugo.Generator }}
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+{{ $styles:= resources.Get "/scss/style.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint "sha512" }}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+
+<link rel="stylesheet" href="{{ "/css/prism.css" | relURL }}">
+
+<style>@import url('https://fonts.googleapis.com/css2?family=Cousine&family=Montserrat&family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@300;400;700&display=swap');</style>
+<link rel="shortcut icon" href="{{ "/images/favicon.ico" | relURL }}" type="image/x-icon" />
+
+
+{{ if .Site.Params.enableGoogleAnalytics }} 
+    {{ template "_internal/google_analytics_async.html" . }}
+{{ end }}
+
+{{ if .Site.Params.enableOpenGranph }} 
+    {{ template "_internal/opengraph.html" . }}
+{{ end }}
+
+{{ if .OutputFormats.Get "RSS" }}
+  {{ with .OutputFormats.Get "RSS" }}
+    <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+    <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
+  {{ end }}
+{{ end }}
+
+<script src="https://kit.fontawesome.com/fa02392c8f.js" crossorigin="anonymous"></script>
