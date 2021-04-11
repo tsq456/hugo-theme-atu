@@ -2,9 +2,11 @@
 title: '军训掠影'
 date: 2018-12-31 
 tags: [日常]
+categories: [生活]
 published: true
 hideInList: false
 isTop: false
+cover_image: 'https://images.unsplash.com/photo-1541143087655-0d206ea75969?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2167&q=80'
 ---
 
 
