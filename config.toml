@@ -17,3 +17,22 @@ OpenGraph = true
 
 [permalinks]
   posts = "/:year/:month/:filename/"
+
+
+[[menu.main]]
+name = "归档"
+url = "/posts"
+weight = "100"
+[[menu.main]]
+name = "游戏"
+url = "/game"
+weight = "300"
+[[menu.main]]
+name = "关于"
+url = "/about"
+weight = "400"
+[[menu.main]]
+name = "建设"
+url = "/construct"
+pre = "<i class='fas fa-drafting-compass'></i>"
+weight = "500"

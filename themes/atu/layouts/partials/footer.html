@@ -1,19 +1,23 @@
 <footer id="footer">
+    <script src="{{ "/js/prism.js" | relURL }}"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
     {{/*  word counter  */}}
     {{$scratch := newScratch}}
     {{ range (where .Site.Pages "Kind" "page" )}}
     {{$scratch.Add "total" .WordCount}}
     {{ end }}
+    <div class="content">
+        <p class="copyright">
+            共 {{ len (where .Site.RegularPages "Section" "posts") }} 篇文章,合计 {{$scratch.Get "total" }} 字<br>
+    
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span><br>
+    
+           © Copyright 
+           {{ now.Format "2006"}}
+           {{ .Site.Params.Author }} · 
+           Powered by <a href="http://www.gohugo.io/">Hugo</a>
+        </p>
+    </div>
 
-    <p class="copyright">
-        共 {{ len (where .Site.RegularPages "Section" "posts") }} 篇文章,合计 {{$scratch.Get "total" }} 字<br>
-
-        本站访问量 1333&nbsp;&nbsp;您是第 200 位访问者<br>
-
-       © Copyright 
-       {{ now.Format "2006"}}
-       {{ .Site.Params.Author }} · 
-       Powered by <a href="http://www.gohugo.io/">Hugo</a>
-    </p>
-    <script src="{{ "/js/prism.js" | relURL }}"></script>
 </footer>

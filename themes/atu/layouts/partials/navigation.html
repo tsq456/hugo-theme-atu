@@ -1,0 +1,17 @@
+<div id="navigation">
+    <div class="nav-wrapper">
+        111
+        <div class="sitelogo">
+
+        </div>
+        <ul class="menu-list">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+                <li>
+                    <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}
+                    </a>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
