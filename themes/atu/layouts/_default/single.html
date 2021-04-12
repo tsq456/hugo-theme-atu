@@ -1,4 +1,54 @@
-<main>
-    {{ .Title }}
-    {{ .Content }}
-</main>
+{{ define "main" }}
+
+<div id="singlepage">
+    <div class="content-bg">
+        <div class="head-wrapper" style="background: url(
+            {{- if .Params.cover_image -}}
+                '{{- .Params.cover_image -}}'
+            {{- else -}}
+                '/images/posthead.webp'
+            {{- end -}}
+        );background-size: cover;backgound-position-y:center">
+
+            <div class="post-title">
+
+                {{ with .Params.categories }}
+                    {{ range . }}
+                        <a href="{{ "/categories/" | absURL }}{{ . | urlize }}" >
+                            x {{ . }} x
+                        </a>
+                    {{ end }}
+                {{ end }}
+
+                <h1>{{ .Title }}</h1>
+                <div class="post-meta">
+                    <span>
+                        {{ .Date.Format "2006-01-02" }}
+                      </span>
+                      <span class="split">
+                        ·
+                      </span>
+                      <span>
+                        {{ if lt 1 .WordCount }}
+                          约{{ .WordCount }}字
+                        {{ else }}
+                            {{ .WordCount }} word
+                        {{ end }}
+                      </span>
+                      <span class="split">
+                        ·
+                      </span>
+                      <span>
+                        需时{{ .ReadingTime }}分钟
+                      </span>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            {{ .Content }}
+        </div>
+    </div>
+</div>
+
+{{ end }}
+

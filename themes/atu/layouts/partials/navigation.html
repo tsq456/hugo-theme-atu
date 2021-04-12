@@ -1,17 +1,15 @@
-<div id="navigation">
+<div id="{{if .IsHome}}home-navigation{{else}}singlepage-navigation{{end}}">
     <div class="nav-wrapper">
-        111
         <div class="sitelogo">
-
+            阿凸
         </div>
         <ul class="menu-list">
-            {{ $currentPage := . }}
-            {{ range .Site.Menus.main }}
-                <li>
-                    <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}
-                    </a>
-                </li>
-            {{ end }}
+            <li>
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                    <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>
+                {{ end }}
+            </li>
         </ul>
     </div>
 </div>
