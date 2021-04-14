@@ -448,6 +448,13 @@ ul, ol {
     .vcontent {
         font-size: $default-font-size;
     }
+    .vnick {
+        color: $default-font-color;
+        font-weight: 700;
+    }
+    .vat {
+        float: unset !important;
+    }
 }
 // waline hack end
 
@@ -513,6 +520,9 @@ ul, ol {
         a {
             border-bottom: 1px dashed $accent-color;
             color: $accent-color;
+            margin: 0 .2rem;
+            padding: 0 .15rem;
+            border-radius: 2px;
             &:hover {
                 background-color: $accent-color;
                 color: $front-bg-color;
