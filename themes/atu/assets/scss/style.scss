@@ -26,17 +26,6 @@ $default-font-size: 16px;
     @return $px / $default-font-size * 1rem;
 }
 
-@font-face {
-    font-family: 'iconfont';  /* project id 2271169 */
-    src: url('//at.alicdn.com/t/font_2271169_oa2euyk4hsr.eot');
-    src: url('//at.alicdn.com/t/font_2271169_oa2euyk4hsr.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_2271169_oa2euyk4hsr.woff2') format('woff2'),
-    url('//at.alicdn.com/t/font_2271169_oa2euyk4hsr.woff') format('woff'),
-    url('//at.alicdn.com/t/font_2271169_oa2euyk4hsr.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_2271169_oa2euyk4hsr.svg#iconfont') format('svg');
-}
-
-
 //globle style
 
 * {margin: 0;padding: 0;box-sizing: border-box;}
@@ -120,9 +109,10 @@ blockquote {
         margin-bottom: 0 !important;
     }
     &::after {
-        font-family: 'iconfont';
-        content: '\ec81';
+        font-family: 'Material Icons';
+        content: '\e244';
         font-size: 60px;
+        transform: rotate(180deg);
         color:rgb(184, 184, 184);
         position: absolute;
         top: pxTorem(20px);
@@ -172,45 +162,48 @@ ul, ol {
             width: 100%;
         }
         .sitelogo {
-            position: unset;
-            left: unset;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 30px;
             bottom: unset;
-            margin: 0 auto;
         }
         ul.menu-list {
-            position: unset;
-            margin: 0 auto;
+            height: pxTorem(50px);
+            line-height: pxTorem(50px);
+            background-color: $thead-bg-color;
+            width: 100%;
+            top: 140px;
+            right: unset;
+            text-align: center;
         }
     }
 }
 #singlepage-navigation {
+    height: 0px;
     position: relative;
-    z-index: 1;
-    color: $front-bg-color;
+    top: 200px;
+    z-index: 99;
     .nav-wrapper {
         width: $front-bg-width;
-        left: 50%;
-        transform: translateX(-50%);
+        position: relative;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .sitelogo {
+        transform: scale(.4);
         position: absolute;
-        height: pxTorem(80px);
-        .sitelogo {
-            position: absolute;
-            bottom: 0;
-            float: left;
-            font-size: pxTorem(36px);
-            font-weight: 700;
-        }
-        .menu-list {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            float: right;
-            list-style: none;
-        }
-        .menu-list a {
-            margin-left: 20px;
-            font-size: pxTorem(18px);
-        }
+        left: 1rem;
+        bottom: 0;
+    }
+    ul.menu-list {
+        position: absolute;
+        right: 1rem;
+        bottom: 0;
+        margin: 0;
+    }
+    .nav-wrapper .menu-list a {
+        margin-left: 20px;
+        font-size: pxTorem(18px);
     }
 }
 
@@ -236,7 +229,8 @@ ul, ol {
         margin: 0 auto;
         margin-bottom: 40px;
         @media screen and (max-width:640px) {
-            box-shadow: transparent;
+            box-shadow: unset;
+            border: unset;
         }
     }
     .homepage-posts {
@@ -294,8 +288,8 @@ ul, ol {
                 margin-right: 6px;
             }
             .post-tags a::before {
-                font-family: "iconfont";
-                content: "\e6da";
+                font-family: "Material Icons";
+                content: "\e9ef";
                 color: $sencondary-font-color;
             }
             .more {
@@ -363,7 +357,6 @@ ul, ol {
     margin-bottom: -40px;
     font-size: pxTorem(14px);
     .content {
-        // width: ($content-width / 100%) * $front-bg-width;
         text-align: center;
         color: $sencondary-font-color;
         a {color: $accent-color;}
@@ -402,7 +395,7 @@ ul, ol {
             margin-bottom: pxTorem(20px);
             @media screen and (max-width:800px){
                 font-size: pxTorem(24px);
-        }
+            }
         }
 
         .head-wrapper .post-title .post-meta {
@@ -416,6 +409,47 @@ ul, ol {
         }
     }
 }
+
+#singlepage .post-pagination {
+    width: 90%;
+    margin: 4rem auto 2rem;
+    display: flex;
+    justify-content: space-between;
+    .pre-post {
+        width: 50%;
+        line-height: 2rem;
+        display: inline-block;
+    }
+    .next-post {
+        width: 50%;
+        text-align: right;
+        line-height: 2rem;
+        display: inline-block;
+    }
+}
+// waline hack
+#waline {
+    .v[data-class=v] .vwrap .vheader .vinput {border-bottom: 1px solid #f0f0f0;}
+    .vwrap {
+        border-radius: 0px !important;
+        border-right: none !important;
+        border-left: none !important;
+    }
+    .vpower {
+        margin-right: 10px;
+        a {color: $accent-color;}
+    }
+    .vcount {
+        margin-left: 10px;
+    }
+    .vcard {
+        padding: 10px;
+    }
+    .vcontent {
+        font-size: $default-font-size;
+    }
+}
+// waline hack end
 
 // singlepage words style
 #singlepage {
@@ -572,3 +606,4 @@ ul, ol {
         }
     }
 }
+// singlepage words style end

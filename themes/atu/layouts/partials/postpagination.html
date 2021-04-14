@@ -1,0 +1,20 @@
+<nav class="post-pagination">
+
+    {{if .Next}}
+    <a class="pre-posts" href="{{.Next.Permalink}}">
+        <span class="material-icons">arrow_back</span>&nbsp;
+        {{.Next.Title}}
+    </a>
+    {{else}}
+    <a class="pre-posts">ENd</a>
+    {{end}}
+    
+    {{if .Prev}}
+    <a class="next-posts" href="{{.Prev.Permalink}}">
+        {{.Prev.Title}}&nbsp;
+        <span class="material-icons">arrow_forward</span>
+    </a>
+    {{else}}
+    <a class="next-posts">ENd</a>
+    {{end}}
+</nav>

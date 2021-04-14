@@ -11,6 +11,9 @@ googleAnalytics = "UA-59524632-1"
 
 OpenGraph = true
 
+[Params]
+enableComment = true
+
 [taxonomies]
   tag = "tags"
   category = "categories"

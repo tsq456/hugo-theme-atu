@@ -47,6 +47,10 @@
         <div class="content">
             {{ .Content }}
         </div>
+        {{ partial "postpagination.html" . }}
+        {{ if .Site.Params.enableComment }}
+        {{ partial "comment.html" . }}
+        {{ end }}
     </div>
 </div>
 
