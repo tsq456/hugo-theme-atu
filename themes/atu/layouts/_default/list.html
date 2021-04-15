@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+<div id="archive">
+    <div class="content-bg">
+        <p class="title">
+            {{ .Title }}
+        </p>
+
+        {{ range .Pages }}
+            <div class="posts">
+                <span class="post-title">
+                    <a href="{{ .Permalink }}">
+                        {{ .Title }}
+                    </a>
+                </span>
+                <span class="post-date">
+                    {{ .Date.Format "2006-01-02" }}
+                </span>
+
+            </div>
+        {{ end }}          
+    </div>
+</div>
+
+
+{{ end }}

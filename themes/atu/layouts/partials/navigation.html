@@ -1,12 +1,7 @@
 <div id="{{if .IsHome}}home-navigation{{else}}singlepage-navigation{{end}}">
     <div class="nav-wrapper">
         <img src="
-        {{ if .IsHome }}
-        images/titled-logo.png
-        {{ else }}
-        {{ .Site.BaseURL }}images/sitelogo.png
-        {{ end }}
-        " class="sitelogo
+        {{- .Site.BaseURL -}}images/titled-logo.png" class="sitelogo
         ">
         <ul class="menu-list">
             <li>

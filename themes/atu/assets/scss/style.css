@@ -1,10 +1,3 @@
-@font-face {
-  font-family: 'iconfont';
-  /* project id 2271169 */
-  src: url("//at.alicdn.com/t/font_2271169_oa2euyk4hsr.eot");
-  src: url("//at.alicdn.com/t/font_2271169_oa2euyk4hsr.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_2271169_oa2euyk4hsr.woff2") format("woff2"), url("//at.alicdn.com/t/font_2271169_oa2euyk4hsr.woff") format("woff"), url("//at.alicdn.com/t/font_2271169_oa2euyk4hsr.ttf") format("truetype"), url("//at.alicdn.com/t/font_2271169_oa2euyk4hsr.svg#iconfont") format("svg");
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -62,7 +55,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   margin: 20px auto;
 }
 
@@ -98,9 +91,10 @@ blockquote p {
 }
 
 blockquote::after {
-  font-family: 'iconfont';
-  content: '\ec81';
+  font-family: 'Material Icons';
+  content: '\e244';
   font-size: 60px;
+  transform: rotate(180deg);
   color: #b8b8b8;
   position: absolute;
   top: 1.25rem;
@@ -110,7 +104,6 @@ blockquote::after {
 
 ul, ol {
   list-style: none;
-  list-style-position: inside;
   margin: 1.5rem;
 }
 
@@ -155,45 +148,36 @@ ul, ol {
     width: 100%;
   }
   #home-navigation .sitelogo {
-    position: unset;
-    left: unset;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px;
     bottom: unset;
-    margin: 0 auto;
   }
   #home-navigation ul.menu-list {
-    position: unset;
-    margin: 0 auto;
+    height: 3.125rem;
+    line-height: 3.125rem;
+    background-color: #e6e6e6;
+    width: 100%;
+    top: 140px;
+    right: unset;
+    text-align: center;
   }
 }
 
 #singlepage-navigation {
-  position: relative;
-  z-index: 1;
-  color: #ffffff;
+  height: 100px;
 }
 
 #singlepage-navigation .nav-wrapper {
   width: 920px;
-  left: 50%;
-  transform: translateX(-50%);
-  position: absolute;
-  height: 5rem;
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 #singlepage-navigation .nav-wrapper .sitelogo {
   position: absolute;
-  bottom: 0;
-  float: left;
-  font-size: 2.25rem;
-  font-weight: 700;
-}
-
-#singlepage-navigation .nav-wrapper .menu-list {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  float: right;
-  list-style: none;
+  top: 50%;
 }
 
 #singlepage-navigation .nav-wrapper .menu-list a {
@@ -229,7 +213,8 @@ ul, ol {
 
 @media screen and (max-width: 640px) {
   #homepage .content-bg {
-    box-shadow: transparent;
+    box-shadow: unset;
+    border: unset;
   }
 }
 
@@ -306,8 +291,8 @@ ul, ol {
 }
 
 #homepage .homepage-posts .post-meta .post-tags a::before {
-  font-family: "iconfont";
-  content: "\e6da";
+  font-family: "Material Icons";
+  content: "\e9ef";
   color: #707070;
 }
 
@@ -451,6 +436,99 @@ ul, ol {
   margin-top: 36px;
 }
 
+#singlepage .post-pagination {
+  width: 90%;
+  margin: 4rem auto 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#singlepage .post-pagination .pre-post {
+  width: 50%;
+  line-height: 2rem;
+  display: inline-block;
+}
+
+#singlepage .post-pagination .next-post {
+  width: 50%;
+  text-align: right;
+  line-height: 2rem;
+  display: inline-block;
+}
+
+#waline .v[data-class=v] .vwrap .vheader .vinput {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+#waline .vwrap {
+  border-radius: 0px !important;
+  border-right: none !important;
+  border-left: none !important;
+}
+
+#waline .vpower {
+  margin-right: 10px;
+}
+
+#waline .vpower a {
+  color: #fc4041;
+}
+
+#waline .vcount {
+  margin-left: 10px;
+}
+
+#waline .vcard {
+  padding: 10px;
+}
+
+#waline .vcontent {
+  font-size: 16px;
+}
+
+#waline .vnick {
+  color: #2d2d2d;
+  font-weight: 700;
+}
+
+#waline .vat {
+  float: unset !important;
+}
+
+#singlepage ul {
+  margin-left: 1.5rem;
+  list-style: disc;
+}
+
+#singlepage ol {
+  list-style: decimal-leading-zero;
+  margin-left: 1.5rem;
+}
+
+#singlepage ul ul {
+  list-style-type: circle;
+}
+
+#singlepage ol ol,
+#singlepage ul ul,
+#singlepage ul ol,
+#singlepage ol ul {
+  margin-top: .5rem;
+}
+
+#singlepage ul li,
+#singlepage ol li,
+#singlepage li ul,
+#singlepage li ol,
+#singlepage ul ul,
+#singlepage ol ol {
+  margin-left: 1rem;
+}
+
+#singlepage li {
+  line-height: 2.5rem;
+}
+
 #singlepage .content h1, #singlepage .content h2, #singlepage .content h3, #singlepage .content h4, #singlepage .content h5, #singlepage .content h6 {
   position: relative;
   color: #1D1D1D;
@@ -520,6 +598,9 @@ ul, ol {
 #singlepage .content a {
   border-bottom: 1px dashed #fc4041;
   color: #fc4041;
+  margin: 0 .2rem;
+  padding: 0 .15rem;
+  border-radius: 2px;
 }
 
 #singlepage .content a:hover {
@@ -534,40 +615,6 @@ ul, ol {
   max-width: 95%;
   border: 1px solid #D7D7D7;
   border-radius: 4px;
-}
-
-#singlepage .content ul {
-  margin-left: 1.5rem;
-  list-style: disc;
-}
-
-#singlepage .content ol {
-  list-style: decimal-leading-zero;
-  margin-left: 1.5rem;
-}
-
-#singlepage .content ul ul {
-  list-style-type: circle;
-}
-
-#singlepage .content ol ol,
-#singlepage .content ul ul,
-#singlepage .content ul ol,
-#singlepage .content ol ul {
-  margin-top: .5rem;
-}
-
-#singlepage .content ul li,
-#singlepage .content ol li,
-#singlepage .content li ul,
-#singlepage .content li ol,
-#singlepage .content ul ul,
-#singlepage .content ol ol {
-  margin-left: 1rem;
-}
-
-#singlepage .content li {
-  line-height: 2.5rem;
 }
 
 #singlepage .content hr {
@@ -628,4 +675,15 @@ ul, ol {
   background-color: #999999;
   border-radius: 4px;
   color: #ffffff;
+}
+
+#archive .content-bg {
+  width: 920px;
+  max-width: 100%;
+  min-height: 80vh;
+  background-color: #ffffff;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
+  margin: 0 auto;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
 }

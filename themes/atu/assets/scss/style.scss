@@ -26,6 +26,47 @@ $default-font-size: 16px;
     @return $px / $default-font-size * 1rem;
 }
 
+@mixin listfullstye {
+    ul {
+        margin-left: 1.5rem;
+        list-style: disc;
+    }
+    ol {
+        list-style: decimal-leading-zero;
+        margin-left: 1.5rem;
+      }
+    ul ul {
+        list-style-type: circle;
+    }
+    ol ol,
+    ul ul,
+    ul ol,
+    ol ul {
+        margin-top: .5rem;
+    }
+    ul li,
+    ol li,
+    li ul,
+    li ol,
+    ul ul,
+    ol ol {
+        margin-left: 1rem;
+    }
+    li {
+        line-height: 2.5rem;
+    }
+}
+@mixin contentbg {
+    width: $front-bg-width;
+    max-width: 100%;
+    min-height: 80vh;
+    background-color: $front-bg-color;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+}
+
 //globle style
 
 * {margin: 0;padding: 0;box-sizing: border-box;}
@@ -76,7 +117,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     margin: 20px auto;
 }
 
@@ -123,7 +164,6 @@ blockquote {
 
 ul, ol {
     list-style: none;
-    list-style-position: inside;
     margin: 1.5rem;
 }
 
@@ -179,27 +219,19 @@ ul, ol {
     }
 }
 #singlepage-navigation {
-    height: 0px;
-    position: relative;
-    top: 200px;
-    z-index: 99;
+    height: 100px;
     .nav-wrapper {
         width: $front-bg-width;
         position: relative;
         max-width: 100%;
         margin: 0 auto;
     }
-    .sitelogo {
-        transform: scale(.4);
+    .nav-wrapper .sitelogo {
         position: absolute;
-        left: 1rem;
-        bottom: 0;
+        top: 50%;
     }
     ul.menu-list {
-        position: absolute;
-        right: 1rem;
-        bottom: 0;
-        margin: 0;
+        // float: right;
     }
     .nav-wrapper .menu-list a {
         margin-left: 20px;
@@ -366,14 +398,7 @@ ul, ol {
 #singlepage {
     background-color: $front-bg-color;
     .content-bg {
-        width: $front-bg-width;
-        max-width: 100%;
-        min-height: 80vh;
-        background-color: $front-bg-color;
-        box-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
-        margin: 0 auto;
-        margin-bottom: 40px;
-        padding-bottom: 40px;
+        @include contentbg()
         .head-wrapper {
             position: relative;
             width: 100%;
@@ -460,6 +485,7 @@ ul, ol {
 
 // singlepage words style
 #singlepage {
+    @include listfullstye()
     .content {
         h1,h2,h3,h4,h5,h6 {
             position: relative;
@@ -536,34 +562,6 @@ ul, ol {
             border: 1px solid #D7D7D7;
             border-radius: 4px;
           }
-        ul {
-            margin-left: 1.5rem;
-            list-style: disc;
-        }
-        ol {
-            list-style: decimal-leading-zero;
-            margin-left: 1.5rem;
-          }
-        ul ul {
-            list-style-type: circle;
-        }
-        ol ol,
-        ul ul,
-        ul ol,
-        ol ul {
-            margin-top: .5rem;
-        }
-        ul li,
-        ol li,
-        li ul,
-        li ol,
-        ul ul,
-        ol ol {
-            margin-left: 1rem;
-        }
-        li {
-            line-height: 2.5rem;
-        }
         hr {
             border: none;
             border-bottom: 1px solid #999;
@@ -617,3 +615,9 @@ ul, ol {
     }
 }
 // singlepage words style end
+
+#archive {
+    .content-bg {
+        @include contentbg()
+    }
+}
