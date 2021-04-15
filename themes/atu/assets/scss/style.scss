@@ -256,7 +256,7 @@ ul, ol {
         max-width: 100%;
         border-radius: 4px;
         border: 1px solid #e2e2e2;
-        background-color: $front-bg-width;
+        background-color: $front-bg-color;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         margin: 0 auto;
         margin-bottom: 40px;
@@ -340,7 +340,6 @@ ul, ol {
                 a {
                     margin-right: pxTorem(10px);
                     z-index: 10;
-                    font-weight: 700;
                 }
                 svg {margin-left: pxTorem(10px);}  
                 a::before {
@@ -384,7 +383,6 @@ ul, ol {
 }
 
 #footer {
-    height: 140px;
     padding: 20px;
     margin-bottom: -40px;
     font-size: pxTorem(14px);
@@ -496,6 +494,23 @@ ul, ol {
             margin-bottom: 3rem;
             text-align: center;
             position: relative;
+            &::before {
+                position: absolute;
+                content: "";
+                width: 6rem;
+                height: .3rem;
+                background-color: lighten($color: $default-font-color, $amount: 30%);
+                bottom: -.7rem;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 4px;
+                transition: ease-in all .3s;
+            }
+            &:hover::before {
+                background-color: $accent-color;
+                width: 10rem;
+                transition: ease-in all .3s;
+            }
         }
         h2 {
             margin: 3rem auto 2rem;
@@ -616,8 +631,134 @@ ul, ol {
 }
 // singlepage words style end
 
+
+// list page start
 #archive {
     .content-bg {
         @include contentbg()
+        display:flex;
+        justify-content: space-between;
+        padding: 2rem;
+    }
+    .left-wrap {
+        width: 60%;
+        margin-right: pxTorem(60px);
+        .posts {
+            margin: 1rem 0;
+            &:first-child {margin-top: 0;}
+            .post-date {
+                float: right;
+            }
+        }
+        a:hover {
+            border-bottom: 1px solid $default-font-color;
+        }
+
+    }
+    .right-wrap {
+        width: 35%;
+        p {
+            border-bottom: 1px solid $thead-bg-color;
+            height: pxTorem(36px);
+            font-weight: 700;
+        }
+        .cate {
+            a {
+                display: block;
+                margin-top: pxTorem(20px);
+                height: 40px;
+                span {
+                    margin-left: 5px;
+                    color: $last-font-color;
+                }
+            }
+            img {
+                margin-right: 1rem;
+                vertical-align: middle;
+            }
+        }
+        .tag {
+            p {
+            margin-top: 3rem;
+            }
+            a {
+                display: inline-block;
+                margin-top: pxTorem(16px); 
+                margin-right: pxTorem(20px);
+                padding: 4px;
+                span {
+                    margin-left: 5px;
+                    color: $last-font-color;
+                }
+                &:hover {
+                    span {color: $quota-bg-color;}
+                    background-color: $default-font-color;
+                    color: $quota-bg-color;
+                    border-radius: 2px;
+                }
+            }
+        }
     }
 }
+// list page end
+
+// list paginator start
+.pagination-list {
+
+    margin: 0 2rem;
+    padding: 10px;
+    li {
+      display: inline-block;
+    }
+  }
+  .listPagination {
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+  }
+  .pagination-link {
+    a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      color: $default-font-color;
+      text-decoration: none !important;
+    }
+    &.is-current {
+      a {
+        display: inline-block;
+        border: 0px solid rgb(201, 201, 201);
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        color: white;
+        background-color: #292929;
+        border-radius: 4px;
+      }
+    }
+  }
+  .pagination-previous,
+  .pagination-next,
+  .listPagination .pagination-list {
+    display: inline-block;
+    color: #292929;
+  }
+  .pagination-ellipsis {
+    margin: 0px 10px;
+  }
+  .pagination-previous-none,
+  .pagination-next-none,
+  .pagination-previous-none:hover,
+  .pagination-next-none:hover {
+    color: #bbb;
+    text-decoration: #bbb;
+    cursor: not-allowed;
+  }
+  .pagination-ellipsis {
+      cursor: not-allowed;
+  }
+  
+// list paginator end

@@ -4,12 +4,12 @@
     <div id="homepage">
         <div class="bgtop"></div>
         <div class="content-bg">
-            {{ range .Site.RegularPages }}
+            {{ range $paginator.Pages }}
                 <article class="homepage-posts">
                     <h1 class="post-title">
                         <a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a>
                     </h1>
-                    <p class="post-date">{{ .Params.date | dateFormat "JAN 2, 2006" }}</p>
+                    <p class="post-date">{{ .Params.date | dateFormat "JAN 2,2006" }}</p>
 
 
                     {{ if .Params.cover_image }}
@@ -50,9 +50,9 @@
                     </div>
 
                     <hr class="post-divider">
-                    
                 </article>
             {{ end }} 
+            {{ partial "pagination.html" . }}
         </div>
     </div>
     

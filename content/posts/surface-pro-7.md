@@ -2,7 +2,7 @@
 title: "Surface Pro 7 上手记"
 date: 2020-07-24T16:18:00+0800
 tags: [日常]
-categories: [测试]
+categories: [Code]
 feature: https://lmm.elizen.me/images/2020/06/surface-pro-7.jpg-webp
 ---
 

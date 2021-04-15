@@ -1,12 +1,11 @@
 {{ define "main" }}
 
 <div id="archive">
+    {{ $paginator := .Paginate (.RegularPages) 20 }}
     <div class="content-bg">
-        <p class="title">
-            {{ .Title }}
-        </p>
-
-        {{ range .Pages }}
+        <div class="left-wrap">
+            <h1>{{ .Title }}</h1>
+            {{ range $paginator.Pages }}
             <div class="posts">
                 <span class="post-title">
                     <a href="{{ .Permalink }}">
@@ -16,11 +15,33 @@
                 <span class="post-date">
                     {{ .Date.Format "2006-01-02" }}
                 </span>
-
             </div>
-        {{ end }}          
+            {{ end }}
+            {{ partial "pagination.html" . }}
+        </div>          
+        <div class="right-wrap">
+            <div class="cate">
+                <p>分类</p>
+             {{ range $categories, $taxonomy := .Site.Taxonomies.categories }}
+                <a href="{{ "/categories/" | relLangURL}}{{ $categories | urlize }}">
+                    <img src="/images/category-image/{{ humanize $categories }}.png" alt="">
+                    {{- humanize $categories -}}
+                    <span>({{ .Count }})</span>
+                </a>
+            {{ end }}
+            </div>
+
+            <div class="tag">
+                <p>标签</p>
+            {{ range $tags, $taxonomy := .Site.Taxonomies.tags }}
+                <a href="{{ "/tags/" | relLangURL}}{{ $tags | urlize }}">
+                    {{- $tags -}}
+                    <span>({{ .Count }})</span>
+                </a>
+            {{ end }}
+            </div>
+        </div>
     </div>
 </div>
-
 
 {{ end }}
