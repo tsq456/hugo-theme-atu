@@ -1,4 +1,6 @@
-<div id="{{if .IsHome}}home-navigation{{else}}singlepage-navigation{{end}}">
+{{if not .IsPage}}
+<div id="navigation">
+    <div class="bg"></div>
     <div class="nav-wrapper">
         <img src="
         {{- .Site.BaseURL -}}images/titled-logo.png" class="sitelogo
@@ -13,3 +15,4 @@
         </ul>
     </div>
 </div>
+{{end}}

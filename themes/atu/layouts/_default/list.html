@@ -2,9 +2,10 @@
 
 <div id="archive">
     {{ $paginator := .Paginate (.RegularPages) 20 }}
+
+    <div class="sitebgtop"></div>
     <div class="content-bg">
         <div class="left-wrap">
-            <h1>{{ .Title }}</h1>
             {{ range $paginator.Pages }}
             <div class="posts">
                 <span class="post-title">

@@ -106,14 +106,10 @@ h1 {
     font-size: 2rem;
     line-height: 2.2rem;
     margin: 0 auto;
-    @media screen and (max-width:1000px) {
-        font-size: pxTorem(24px);
-    }
 }
 
 h2 {
     font-size: 1.8rem;
-    margin: 20px auto;
 }
 
 h3 {
@@ -127,6 +123,20 @@ h4 {
 
 h5, h6 {
     font-size: 1.25rem;
+}
+@media screen and (max-width:1000px) {
+    h4,h5,h6 {
+        font-size: 1.25rem;
+    }
+    h3 {
+        font-size: 1.3rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+    h1 {
+        font-size: pxTorem(24px);
+    }
 }
 
 table {
@@ -159,6 +169,9 @@ blockquote {
         top: pxTorem(20px);
         left: 20px;
         z-index: -1;
+        @media screen and (max-width:640px) {
+            left: 40px;
+        }
     }
 }
 
@@ -169,15 +182,22 @@ ul, ol {
 
 // markdown style end
 
-#home-navigation {
-    height: 0px;
-    position: relative;
-    top: 300px;
+#navigation {
+    .bg {
+        background:url('/images/homepage-top.jpg');
+        background-size: cover;
+        background-position-x: center;
+        width: 100%;
+        height: 320px;
+        @media screen and (max-width:640px) {
+            display: none;
+        }
+    }
     .nav-wrapper {
         width: $front-bg-width;
         position: relative;
         max-width: 100%;
-        margin: 0 auto;
+        margin: 0 auto 1rem;
     }
     .sitelogo {
         position: absolute;
@@ -210,7 +230,9 @@ ul, ol {
         ul.menu-list {
             height: pxTorem(50px);
             line-height: pxTorem(50px);
-            background-color: $thead-bg-color;
+            background-color: $tbody-bg-color;
+            border-top: 1px solid darken($color: $tbody-bg-color, $amount: 10%);
+            border-bottom: 1px solid darken($color: $tbody-bg-color, $amount: 10%);
             width: 100%;
             top: 140px;
             right: unset;
@@ -218,39 +240,8 @@ ul, ol {
         }
     }
 }
-#singlepage-navigation {
-    height: 100px;
-    .nav-wrapper {
-        width: $front-bg-width;
-        position: relative;
-        max-width: 100%;
-        margin: 0 auto;
-    }
-    .nav-wrapper .sitelogo {
-        position: absolute;
-        top: 50%;
-    }
-    ul.menu-list {
-        // float: right;
-    }
-    .nav-wrapper .menu-list a {
-        margin-left: 20px;
-        font-size: pxTorem(18px);
-    }
-}
 
 #homepage {
-    .bgtop {
-        background:url('/images/homepage-top.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position-x: center;
-        width: 100%;
-        height: 320px;
-        @media screen and (max-width:640px) {
-            display: none;
-        }
-    }
     .content-bg {
         width: $front-bg_width;
         max-width: 100%;
@@ -260,6 +251,12 @@ ul, ol {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         margin: 0 auto;
         margin-bottom: 40px;
+        @media screen and (max-width:$front-bg-width) {
+            box-shadow: unset;
+            border: unset;
+            border-top: 1px solid #e2e2e2;
+            border-radius: unset;
+        }
         @media screen and (max-width:640px) {
             box-shadow: unset;
             border: unset;
@@ -426,9 +423,49 @@ ul, ol {
             font-size: pxTorem(14px);
         }
         .content {
-            padding: 0 4rem 0 4rem;
+            padding: 0 4rem;
             margin: auto;
             margin-top: 36px;
+            @media screen and (max-width:640px) {
+                padding: 0 2rem;
+            }
+        }
+    }
+}
+#singlepage .head-wrapper {
+    &:hover>.backhome {
+        margin-left: -1.5rem;
+        transition: ease-out .2s;
+        .text {opacity: 100%;}
+    }
+    .backhome {
+        z-index: 999;
+        position: absolute;
+        top: 2rem;
+        margin-left: 2rem;
+        text-align: center;
+        transition: ease-out .2s;
+        * {
+            transition: .2s ease-out;
+            color: white;
+        }
+        .text {
+            line-height: 3rem;
+            margin-left: .5rem;
+            vertical-align: middle;
+            text-shadow: 1px 1px 1px rgb(53, 53, 53);
+            opacity: 0;
+        }
+        .material-icons-round.icon {
+            box-sizing: content-box;
+            font-size: 2rem;
+            background-color: $default-font-color;
+            border: 2px solid white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            line-height: 3rem;
+            vertical-align: middle;
         }
     }
 }
@@ -438,16 +475,32 @@ ul, ol {
     margin: 4rem auto 2rem;
     display: flex;
     justify-content: space-between;
-    .pre-post {
+    font-size: .875rem !important;
+    .nextwrap,
+    .prewrap {
         width: 50%;
         line-height: 2rem;
-        display: inline-block;
+        display: inherit;
+        &.end {
+            color: $last-font-color;
+        }
     }
-    .next-post {
-        width: 50%;
-        text-align: right;
+    .prewrap {
+        float: left;
+        justify-content: flex-start;
+    }
+    .nextwrap {
+        float: right;
+        justify-content: flex-end;
+    }
+    span {
         line-height: 2rem;
-        display: inline-block;
+    }
+    a {
+        line-height: 2rem;
+        white-space:nowrap;
+        overflow: hidden;
+        text-overflow:ellipsis;
     }
 }
 // waline hack
@@ -467,13 +520,13 @@ ul, ol {
     }
     .vcard {
         padding: 10px;
+        .vnick {
+            color: $default-font-color;
+            font-weight: 700;
+        }
     }
     .vcontent {
         font-size: $default-font-size;
-    }
-    .vnick {
-        color: $default-font-color;
-        font-weight: 700;
     }
     .vat {
         float: unset !important;
@@ -588,14 +641,21 @@ ul, ol {
             color: #555;
             cursor: pointer;
             font-size: .75rem;
+            a {color: #555; border-bottom: 1px dashed #555; margin: 0 0;}
+            a:hover {
+                background-color: unset;
+                color: unset;
+            }
+            .footnote-ref {
+                margin-left: 4px;
+                padding: 0 pxTorem(4px);
+                border-radius: 2px;
+                color: $front-bg-color;
+                background-color: $default-font-color;
+            }
+            .footnote-backref {border-bottom: none;}
         }
-        .footnote-ref {
-            margin-left: 4px;
-            padding: 0 pxTorem(4px);
-            border-radius: 2px;
-            color: $front-bg-color;
-            background-color: $default-font-color;
-        }
+
         table {
             margin: 1.5rem auto;
             width: 100%;
@@ -618,6 +678,9 @@ ul, ol {
         }
         code {
             font-family: $code-font;
+            word-wrap:break-word;
+            word-break:normal; 
+            white-space: pre-wrap;
         }
         p code,
         li code {
@@ -703,40 +766,48 @@ ul, ol {
 // list page end
 
 // list paginator start
-.pagination-list {
 
+.listPagination {
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    a {
+    border-bottom: none !important;
+    text-align: center;
+    display: inline-block;
+    }
+    @media screen and (max-width:640px) {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2rem;
+        .pagination-list {
+            display: none !important;
+        }
+    }
+}
+.pagination-list {
     margin: 0 2rem;
     padding: 10px;
     li {
       display: inline-block;
     }
   }
-  .listPagination {
-    text-align: center;
-    margin-bottom: 3rem;
-    margin-top: 3rem;
-  }
   .pagination-link {
     a {
-      display: inline-block;
       width: 30px;
       height: 30px;
       line-height: 30px;
       text-align: center;
       color: $default-font-color;
-      text-decoration: none !important;
+      border-radius: 4px;
+      &:hover {
+          background-color: $quota-bg-color;
+      }
     }
     &.is-current {
       a {
-        display: inline-block;
-        border: 0px solid rgb(201, 201, 201);
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
-        text-align: center;
         color: white;
         background-color: #292929;
-        border-radius: 4px;
       }
     }
   }
@@ -745,9 +816,6 @@ ul, ol {
   .listPagination .pagination-list {
     display: inline-block;
     color: #292929;
-  }
-  .pagination-ellipsis {
-    margin: 0px 10px;
   }
   .pagination-previous-none,
   .pagination-next-none,
@@ -759,6 +827,12 @@ ul, ol {
   }
   .pagination-ellipsis {
       cursor: not-allowed;
+      margin: 0px 10px;
   }
   
 // list paginator end
+
+// back-to-top-style
+#back-to-top {
+    z-index: 999;
+}

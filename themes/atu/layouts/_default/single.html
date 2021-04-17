@@ -2,14 +2,13 @@
 
 <div id="singlepage">
     <div class="content-bg">
-        <div class="head-wrapper" style="background: url(
-            {{- if .Params.cover_image -}}
-                '{{- .Params.cover_image -}}'
-            {{- else -}}
-                '/images/posthead.webp'
-            {{- end -}}
-        );background-size: cover;backgound-position-y:center">
 
+        <div class="head-wrapper" style="background: url({{- if .Params.cover_image -}}'{{- .Params.cover_image -}}'{{- else -}}'/images/posthead.webp'{{- end -}});background-size:cover;background-position:center;">
+
+            <a href="{{.Site.BaseURL}}" class="backhome">
+                <span class="material-icons-round icon">arrow_back</span>
+                <span class="text">返回首页</span>
+            </a>
             <div class="post-title">
 
                 {{ with .Params.categories }}
@@ -48,11 +47,11 @@
             {{ .Content }}
         </div>
         {{ partial "postpagination.html" . }}
+        {{ partial "backtop.html" . }}
         {{ if .Site.Params.enableComment }}
         {{ partial "comment.html" . }}
         {{ end }}
     </div>
 </div>
-
 {{ end }}
 

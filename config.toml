@@ -1,10 +1,10 @@
 baseURL = "https://atugo.me"
 languageCode = "zh-cn"
-title = "ATU"
+title = "ATU Blog"
 theme = "atu"
 
 # 每页显示文章数量
-paginate = 5
+paginate = 8
 
 hasCJKLanguage = true
 googleAnalytics = "UA-59524632-1"

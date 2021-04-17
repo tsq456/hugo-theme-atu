@@ -78,7 +78,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
     <html lang="en">
     <head>
       <meta charset="utf-8">
-      <title>Example HTML5 Document</title>
+      <title>Example HTML5 Documentasdasdasdasjdhasjkdhjashdjkashdjahjdhajkhdjasdhajskdhjkashdjsha</title>
     </head>
     <body>
       <p>Test</p>
