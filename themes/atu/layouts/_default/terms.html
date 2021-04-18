@@ -1,14 +1,25 @@
 {{ define "main" }}
-<section id="tags">
-      {{ $data := .Data }}
-      {{ range $key, $value := .Data.Terms.ByCount }}
-          {{ if ($value.Name) }}
-              <span class="tag">
-                  <a href="{{ "tags/" | relURL }}{{ $value.Name | urlize }}">
-                    {{ $value.Name | upper }} <span>{{ $value.Count }}</span>
-                </a>
-              </span>
-          {{ end }}
-      {{ end }}
+<div id="terms">
+    <div class="content-bg">
+        <div class="cate">
+            <p>全部分类</p>
+        {{ range $categories, $taxonomy := .Site.Taxonomies.categories }}
+            <a href="{{ "/categories/" | relLangURL}}{{ $categories | urlize }}">
+                <img src="/images/category-image/{{ humanize $categories }}.png" alt="">
+                {{- humanize $categories -}}
+                <span>({{ .Count }})</span>
+            </a>
+        {{ end }}
+        </div>
+        <div class="tag">
+            <p>全部标签</p>
+        {{ range $tags, $taxonomy := .Site.Taxonomies.tags }}
+            <a href="{{ "/tags/" | relLangURL}}{{ $tags | urlize }}">
+                {{- $tags -}}
+                <span>({{ .Count }})</span>
+            </a>
+        {{ end }}
+        </div>
+    </div>
 </section>
 {{ end }}

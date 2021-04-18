@@ -9,6 +9,7 @@
                 <span class="material-icons-round icon">arrow_back</span>
                 <span class="text">返回首页</span>
             </a>
+            <span class="sitename">{{ .Site.Title}}</span>
             <div class="post-title">
 
                 {{ with .Params.categories }}
@@ -53,5 +54,6 @@
         {{ end }}
     </div>
 </div>
+{{ partial "toc.html" . }}
 {{ end }}
 

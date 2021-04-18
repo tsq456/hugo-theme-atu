@@ -2,9 +2,7 @@
 <div id="navigation">
     <div class="bg"></div>
     <div class="nav-wrapper">
-        <img src="
-        {{- .Site.BaseURL -}}images/titled-logo.png" class="sitelogo
-        ">
+        <a href="{{.Site.BaseURL}}"><span class="sitename">{{- .Site.Title -}}</span></a>
         <ul class="menu-list">
             <li>
                 {{ $currentPage := . }}
