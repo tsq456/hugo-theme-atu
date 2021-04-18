@@ -159,7 +159,6 @@ Error: Error building site: failed to render pages: render of “page” failed:
 因此完成的步骤应该如下：
 
 1. 谷歌表格中创建GA报表并开启自动运行，其中Users量度表示新用户数，Sessions量度表示访问总数；
-  1. 111
 2. 将谷歌表格链接转化为CSV格式；
 3. 在HUGO中使用`getCSV`方法引入CSV链接并读取表格下的具体单元格。
 

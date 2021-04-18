@@ -1,5 +1,4 @@
 $front-bg-color:#ffffff;
-$back-bg-color:#ffffff;
 $footer-bg-color:#2d2d2d;
 
 $accent-color:#fc4041;
@@ -8,13 +7,13 @@ $title-font-color:#1D1D1D;
 $sencondary-font-color:#707070;
 $last-font-color: #999999;
 $quota-bg-color: #f3f3f3;
+$divider-color:#eee;
 
 $thead-bg-color: #e6e6e6;
 $tbody-bg-color:#f5f5f5;
 
-$front-bg-width:920px;
+$globle-wrap-width:920px;
 $content-width:80%;
-$side-null-width:25%;
 
 $default-font: "Noto Sans SC", Helvetica;
 $code-font: "Fira Code", Montserrat, Cousine;
@@ -57,7 +56,7 @@ $default-font-size: 16px;
     }
 }
 @mixin contentbg {
-    width: $front-bg-width;
+    width: $globle-wrap-width;
     max-width: 100%;
     background-color: $front-bg-color;
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.16);
@@ -74,6 +73,7 @@ html {
 }
 
 body {
+    background-color: #f1f1f1;
     color: $default-font-color;
     font-size: pxTorem(16px); 
     line-height: 1.8rem; 
@@ -82,6 +82,10 @@ body {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -webkit-font-smoothing: initial;
+}
+
+img {
+    -webkit-user-drag: none;
 }
 a {text-decoration: none; font-family: $default-font; color: $default-font-color;}
 
@@ -189,55 +193,53 @@ ul, ol {
 // markdown style end
 
 #navigation {
-    .bg {
-        background:url('/images/homepage-top.jpg');
-        background-size: cover;
-        background-position-x: center;
-        width: 100%;
-        height: 320px;
-        @media screen and (max-width:640px) {
-            display: none;
-        }
+    background:url('/images/globleNavBG.jpg');
+    background-size: cover;
+    background-position-x: center;
+    width: $globle-wrap-width;
+    max-width: 100%;
+    position: relative;
+    margin: 0 auto;
+    height: 300px;
+    @media screen and (max-width:640px) {
+        background: none;
     }
-    .nav-wrapper {
-        width: $front-bg-width;
-        position: relative;
-        max-width: 100%;
-        margin: 0 auto 1rem;
-    }
-    .sitename {
+    .sitelogo {
         position: absolute;
         left: 1rem;
-        bottom: 0;
+        bottom: 1rem;
         color: $default-font-color;
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 3rem;
     }
-    ul.menu-list {
+    .menu-list {
         position: absolute;
         right: 1rem;
-        bottom: 0;
+        bottom: 1rem;
         margin: 0;
+        a {
+            margin-left: 20px;
+            font-size: pxTorem(18px);
+        }
     }
-    .nav-wrapper .menu-list a {
-        margin-left: 20px;
-        font-size: pxTorem(18px);
+    hr {
+        position: absolute;
+        bottom: 0rem;
+        // border-bottom: 1px solid $divider-color;
+        height: 1px;
+        background-color: $divider-color;
+        border:none;
+        width: calc(920px - 32px);
+        left: 16px;
     }
     @media screen and (max-width:640px) {
         position: unset;
         height: 180px;
-        .nav-wrapper {
-            position: unset;
-            width: 100%;
-        }
-        .sitename {
+        .sitelogo {
             left: 50%;
             transform: translateX(-50%);
             top: 30px;
             bottom: unset;
         }
-        ul.menu-list {
+        .menu-list {
             height: pxTorem(50px);
             line-height: pxTorem(50px);
             background-color: $tbody-bg-color;
@@ -250,28 +252,28 @@ ul, ol {
         }
     }
 }
-
-#homepage {
-    .content-bg {
-        width: $front-bg_width;
-        max-width: 100%;
-        border-radius: 4px;
-        border: 1px solid #e2e2e2;
-        background-color: $front-bg-color;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin: 0 auto;
-        margin-bottom: 40px;
-        @media screen and (max-width:$front-bg-width) {
-            box-shadow: unset;
-            border: unset;
-            border-top: 1px solid #e2e2e2;
-            border-radius: unset;
-        }
-        @media screen and (max-width:640px) {
-            box-shadow: unset;
-            border: unset;
-        }
+.wrap {
+    width: $globle-wrap-width;
+    max-width: 100%;
+    border-radius: 0 0 4px 4px;
+    background-color: $front-bg-color;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    padding-bottom: 1rem;
+    margin-bottom: 40px;
+    @media screen and (max-width:$globle-wrap-width) {
+        box-shadow: unset;
+        border: unset;
+        border-top: 1px solid #e2e2e2;
+        border-radius: unset;
     }
+    @media screen and (max-width:640px) {
+        box-shadow: unset;
+        border: unset;
+    }
+}
+
+.homepage {
     .homepage-posts {
         margin:auto;
         margin-top: pxTorem(56px);
@@ -382,7 +384,7 @@ ul, ol {
         margin-top: pxTorem(12px);
         height: 0px;
         background: transparent;
-        border: 1px solid #ebebeb;
+        border: 1px solid $divider-color;
     }
     &:last-child .post-divider {
         border: 0px;
@@ -400,98 +402,88 @@ ul, ol {
     }
 }
 
-#singlepage {
-    background-color: $front-bg-color;
-    .content-bg {
-        @include contentbg()
-        .head-wrapper {
-            position: relative;
-            width: 100%;
-            height: pxTorem(400px);
-            z-index: 0;
-            .sitename {
-                position: absolute;
-                color: $default-font-color;
-                font-size: 2rem;
-                font-weight: 700;
-                text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
-                right: 2rem;
-                top: 2rem;
-                line-height: 3rem;
-            }
-        }
-        .head-wrapper .post-title {
+.singlepage {
+    .head-wrapper {
+        position: relative;
+        width: 100%;
+        height: pxTorem(400px);
+        z-index: 0;
+        .sitename {
             position: absolute;
-            width: 100%;
-            bottom: 0;
-            padding-top: 76px;
-            padding-bottom: 40px;
-            text-align: center;
-            background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
-        }
-        .head-wrapper .post-title h1 {
-            padding: 0 1rem;
-            color: $back-bg-color;
-            font-size: pxTorem(36px);
-            margin-bottom: pxTorem(20px);
-            @media screen and (max-width:800px){
-                font-size: pxTorem(24px);
-            }
-        }
-
-        .head-wrapper .post-title .post-meta {
-            color: #D7D7D7;
-            font-size: pxTorem(14px);
-        }
-        .content {
-            padding: 0 4rem;
-            margin: auto;
-            margin-top: 36px;
-            @media screen and (max-width:640px) {
-                padding: 0 1rem;
-            }
-        }
-    }
-}
-#singlepage .head-wrapper {
-    &:hover>.backhome {
-        margin-left: -1.5rem;
-        transition: ease-out .2s;
-        .text {opacity: 100%;}
-    }
-    .backhome {
-        z-index: 999;
-        position: absolute;
-        top: 2rem;
-        margin-left: 2rem;
-        text-align: center;
-        transition: ease-out .2s;
-        * {
-            transition: .2s ease-out;
-            color: white;
-        }
-        .text {
-            line-height: 3rem;
-            margin-left: .5rem;
-            vertical-align: middle;
-            text-shadow: 1px 1px 1px rgb(53, 53, 53);
-            opacity: 0;
-        }
-        .material-icons-round.icon {
-            box-sizing: content-box;
+            color: $default-font-color;
             font-size: 2rem;
-            background-color: $default-font-color;
-            border: 2px solid white;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
+            font-weight: 700;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+            right: 2rem;
+            top: 2rem;
             line-height: 3rem;
-            vertical-align: middle;
+        }
+    }
+    .head-wrapper .post-title {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        padding-top: 76px;
+        padding-bottom: 40px;
+        text-align: center;
+        background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+    }
+    .head-wrapper .post-title h1 {
+        color: white;
+        padding: 0 1rem;
+        font-size: pxTorem(36px);
+        margin-bottom: pxTorem(20px);
+        @media screen and (max-width:800px){
+            font-size: pxTorem(24px);
+        }
+    }
+
+    .head-wrapper .post-title .post-meta {
+        color: #D7D7D7;
+        font-size: pxTorem(14px);
+    }
+    .content {
+        padding: 0 4rem;
+        margin: auto;
+        margin-top: 36px;
+        @media screen and (max-width:640px) {
+            padding: 0 1rem;
+        }
+    }
+}
+.singlepage .topinfo {
+    z-index: 999;
+    position: relative;
+    top: 1rem;
+    left: 1rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    span,span a {
+        color: rgb(245, 245, 245) !important;
+    }
+    .path a:hover,
+    .tags a:hover{
+        border-bottom: 1px solid rgb(245, 245, 245);
+    }
+    img, span {
+        vertical-align: middle;
+        display: inline-block;
+    }
+    .path {
+        margin-left: .5rem;
+        padding-left: .5rem;
+    }
+    .tags {
+        position: absolute;
+        right: 2rem;
+        a::before {
+            font-family: "Material Icons";
+            content: "\e9ef";
+            color: rgb(245, 245, 245);
         }
     }
 }
 
-#singlepage .post-pagination {
+.singlepage .post-pagination {
     width: 90%;
     margin: 4rem auto 2rem;
     display: flex;
@@ -524,39 +516,8 @@ ul, ol {
         text-overflow:ellipsis;
     }
 }
-// waline hack
-#waline {
-    .v[data-class=v] .vwrap .vheader .vinput {border-bottom: 1px solid #f0f0f0;}
-    .vwrap {
-        border-radius: 0px !important;
-        border-right: none !important;
-        border-left: none !important;
-    }
-    .vpower {
-        margin-right: 10px;
-        a {color: $accent-color;}
-    }
-    .vcount {
-        margin-left: 10px;
-    }
-    .vcard {
-        padding: 10px;
-        .vnick {
-            color: $default-font-color;
-            font-weight: 700;
-        }
-    }
-    .vcontent {
-        font-size: $default-font-size;
-    }
-    .vat {
-        float: unset !important;
-    }
-}
-// waline hack end
-
 // singlepage words style
-#singlepage {
+.singlepage {
     @include listfullstye()
     .content {
         h1,h2,h3,h4,h5,h6 {
@@ -714,12 +675,40 @@ ul, ol {
     }
 }
 // singlepage words style end
-
+// waline hack
+#waline {
+    .v[data-class=v] .vwrap .vheader .vinput {border-bottom: 1px solid #f0f0f0;}
+    .vwrap {
+        border-radius: 0px !important;
+        border-right: none !important;
+        border-left: none !important;
+    }
+    .vpower {
+        margin-right: 10px;
+        a {color: $accent-color;}
+    }
+    .vcount {
+        margin-left: 10px;
+    }
+    .vcard {
+        padding: 10px;
+        .vnick {
+            color: $default-font-color;
+            font-weight: 700;
+        }
+    }
+    .vcontent {
+        font-size: $default-font-size;
+    }
+    .vat {
+        float: unset !important;
+    }
+}
+// waline hack end
 
 // list page start
-#archive {
-    .content-bg {
-        @include contentbg()
+.archive {
+    .content-wrap {
         display:flex;
         justify-content: space-between;
         padding: 2rem;
@@ -807,7 +796,7 @@ ul, ol {
 
 .listPagination {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     margin-top: 3rem;
     a {
     border-bottom: none !important;
@@ -870,18 +859,18 @@ ul, ol {
   
 // list paginator end
 
-#terms {
-    .content-bg {
-        @include contentbg()
+.terms {
+    padding-bottom: 3rem;
+    p {
+        font-size: pxTorem(18px);
+        font-weight: 700;
+        line-height: 3rem;
+        border-bottom: 1px solid $thead-bg-color;
+        margin-bottom: 1rem;
+    }
+    .cate, .tag {
         padding: 1rem 8rem;
-        text-align: center;
-        p {
-            font-size: pxTorem(18px);
-            font-weight: 700;
-            line-height: 3rem;
-            border-bottom: 1px solid $thead-bg-color;
-            margin-bottom: 1rem;
-        }
+        margin-top: 3rem;
     }
     .cate {
         a {
@@ -899,10 +888,6 @@ ul, ol {
         }
     }
     .tag {
-        margin-bottom: 1rem;
-        p {
-        margin-top: 3rem;
-        }
         a { 
             margin-right: pxTorem(20px);
             padding: 4px;
@@ -923,8 +908,8 @@ ul, ol {
 // toc style start
 .toc {
     position: fixed;
-    top: 100px;
-    right: 4rem;
+    top: 10rem;
+    left: calc((100vw - 920px) / 2 + 930px);
     z-index: 999;
     a {
         font-size: pxTorem(12px);

@@ -1,10 +1,9 @@
 {{ define "main" }}
 
-<div id="archive">
+<div class="archive wrap">
+    {{ partial "navigation.html" . }}
     {{ $paginator := .Paginate (.RegularPages) 20 }}
-
-    <div class="sitebgtop"></div>
-    <div class="content-bg">
+    <div class="content-wrap">
         <div class="left-wrap">
             {{ range $paginator.Pages }}
             <div class="posts">
@@ -22,7 +21,7 @@
         </div>          
         <div class="right-wrap">
             <div class="cate">
-                <p>分类</p>
+                <p>ALL CATEGORIES</p>
              {{ range $categories, $taxonomy := .Site.Taxonomies.categories }}
                 <a href="{{ "/categories/" | relLangURL}}{{ $categories | urlize }}">
                     <img src="/images/category-image/{{ humanize $categories }}.png" alt="">
@@ -33,7 +32,7 @@
             </div>
 
             <div class="tag">
-                <p>标签</p>
+                <p>ALL TAGS</p>
             {{ range $tags, $taxonomy := .Site.Taxonomies.tags }}
                 <a href="{{ "/tags/" | relLangURL}}{{ $tags | urlize }}">
                     {{- $tags -}}

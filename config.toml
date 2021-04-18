@@ -28,7 +28,7 @@ url = "/posts"
 weight = "100"
 [[menu.main]]
 name = "游戏"
-url = "/game"
+url = "/text"
 weight = "300"
 [[menu.main]]
 name = "关于"

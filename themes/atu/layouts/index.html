@@ -1,60 +1,58 @@
 {{ define "main" }}
     {{ $paginator := .Paginate (.Site.RegularPages) }}
 
-    <div id="homepage">
-        <div class="bgtop"></div>
-        <div class="content-bg">
-            {{ range $paginator.Pages }}
-                <article class="homepage-posts">
-                    <h1 class="post-title">
-                        <a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a>
-                    </h1>
-                    <p class="post-date">{{ .Params.date | dateFormat "Jan 2,2006" | upper}}</p>
+<div class="homepage wrap">
+    {{- partial "navigation.html" . -}}
+    {{ range $paginator.Pages }}
+        <article class="homepage-posts">
+            <h1 class="post-title">
+                <a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a>
+            </h1>
+            <p class="post-date">{{ .Params.date | dateFormat "Jan 2,2006" | upper}}</p>
 
 
-                    {{ if .Params.cover_image }}
-                        <a class="post-cover" href='{{ .RelPermalink }}'>
-                            <img 
-                            src="{{ .Params.cover_image }}"
-                            /></a>
-                    {{ end }}
-                    <p class="post-summary">{{ .Summary | plainify }}</p>
-
-                    <div class="post-meta">
-
-                        {{ with .Params.categories }}
-                            <span class="post-cate">
-                                分类：
-                                {{ range . }}
-                                    <a href="{{ "/categories/" | absURL }}{{ . | urlize }}" >{{ . }}</a>
-                                {{ end }}
-                            </span>
-                        {{ end }}
-
-                        {{ with .Params.tags }}
-                            <span class="post-tags">
-                                标签：
-                                {{ range . }}
-                                    <a href="{{ "/tags/" | absURL }}{{ . | urlize }}" >{{ . }}</a>
-                                {{ end }}
-                            </span>
-                        {{ end }}
-
-                        <span class="more">
-                            <a href="{{.Permalink}}">阅读全文
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="7" viewBox="0 0 30 7">
-                                    <path d="M62.009,388.841H88.918l-3.455-5.182h1.909l4.636,7h-30Z" transform="translate(-62.009 -383.659)" fill="#1b1b1b"/>
-                                </svg>
-                            </a>
-                        </span>
-                    </div>
-
-                    <hr class="post-divider">
-                </article>
+            {{ if .Params.cover_image }}
+                <a class="post-cover" href='{{ .RelPermalink }}'>
+                    <img 
+                    src="{{ .Params.cover_image }}"
+                    /></a>
             {{ end }}
-            {{ partial "backtop.html" . }} 
-            {{ partial "pagination.html" . }}
-        </div>
-    </div>
+            <p class="post-summary">{{ .Summary | plainify }}</p>
+
+            <div class="post-meta">
+
+                {{ with .Params.categories }}
+                    <span class="post-cate">
+                        分类：
+                        {{ range . }}
+                            <a href="{{ "/categories/" | absURL }}{{ . | urlize }}" >{{ . }}</a>
+                        {{ end }}
+                    </span>
+                {{ end }}
+
+                {{ with .Params.tags }}
+                    <span class="post-tags">
+                        标签：
+                        {{ range . }}
+                            <a href="{{ "/tags/" | absURL }}{{ . | urlize }}" >{{ . }}</a>
+                        {{ end }}
+                    </span>
+                {{ end }}
+
+                <span class="more">
+                    <a href="{{.Permalink}}">阅读全文
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="7" viewBox="0 0 30 7">
+                            <path d="M62.009,388.841H88.918l-3.455-5.182h1.909l4.636,7h-30Z" transform="translate(-62.009 -383.659)" fill="#1b1b1b"/>
+                        </svg>
+                    </a>
+                </span>
+            </div>
+            <hr class="post-divider">
+        </article>
+    {{ end }}
+    {{ partial "backtop.html" . }} 
+    {{ partial "pagination.html" . }}
+
+</div>
     
 {{ end }}

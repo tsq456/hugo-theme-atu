@@ -1,8 +1,9 @@
 {{ define "main" }}
-<div id="terms">
+<div class="terms wrap">
+    {{ partial "navigation.html" . }}
     <div class="content-bg">
         <div class="cate">
-            <p>全部分类</p>
+            <p>ALL CATEGORIES</p>
         {{ range $categories, $taxonomy := .Site.Taxonomies.categories }}
             <a href="{{ "/categories/" | relLangURL}}{{ $categories | urlize }}">
                 <img src="/images/category-image/{{ humanize $categories }}.png" alt="">
@@ -12,7 +13,7 @@
         {{ end }}
         </div>
         <div class="tag">
-            <p>全部标签</p>
+            <p>ALL TAGS</p>
         {{ range $tags, $taxonomy := .Site.Taxonomies.tags }}
             <a href="{{ "/tags/" | relLangURL}}{{ $tags | urlize }}">
                 {{- $tags -}}
@@ -21,5 +22,5 @@
         {{ end }}
         </div>
     </div>
-</section>
+</div>
 {{ end }}

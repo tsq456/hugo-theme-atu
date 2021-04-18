@@ -1,16 +1,16 @@
 {{if not .IsPage}}
 <div id="navigation">
-    <div class="bg"></div>
-    <div class="nav-wrapper">
-        <a href="{{.Site.BaseURL}}"><span class="sitename">{{- .Site.Title -}}</span></a>
-        <ul class="menu-list">
-            <li>
-                {{ $currentPage := . }}
-                {{ range .Site.Menus.main }}
-                    <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>
-                {{ end }}
-            </li>
-        </ul>
-    </div>
+    <a href="{{.Site.BaseURL}}" class="sitelogo">
+        <img src="/images/sitelogo.png" alt="sitelogo">
+    </a>
+    <ul class="menu-list">
+        <li>
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+                <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>
+            {{ end }}
+        </li>
+    </ul>
+    <hr>
 </div>
 {{end}}
