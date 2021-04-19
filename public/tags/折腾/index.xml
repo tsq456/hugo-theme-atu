@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>折腾 on 阿凸日记</title>
+    <link>//atutang.com/tags/%E6%8A%98%E8%85%BE/</link>
+    <description>Recent content in 折腾 on 阿凸日记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 30 Mar 2021 21:44:20 +0800</lastBuildDate><atom:link href="//atutang.com/tags/%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用Google Spreadsheet统计PV和UV</title>
+      <link>//atutang.com/2021/03/how-to-count-total-visitors-number/</link>
+      <pubDate>Tue, 30 Mar 2021 21:44:20 +0800</pubDate>
+      
+      <guid>//atutang.com/2021/03/how-to-count-total-visitors-number/</guid>
+      <description>21年4月2日：我是沙雕，原来有现成的服务可以使用，不蒜子就提供很好的网站计数服务&amp;hellip;而且谷歌表格由于统计周期的问题，只适合用来</description>
+    </item>
+    
+    <item>
+      <title>创建ManicTime的服务器</title>
+      <link>//atutang.com/2021/03/starting-manictime-server-on-docker/</link>
+      <pubDate>Sat, 27 Mar 2021 09:05:30 +0800</pubDate>
+      
+      <guid>//atutang.com/2021/03/starting-manictime-server-on-docker/</guid>
+      <description>开搞前 text 关于ManicTime（后文称MT）是什么，在之前的一篇博客里有详细介绍过，自己用了一段时间下来，拖延症的症状得到了明显的改善，每天</description>
+    </item>
+    
+  </channel>
+</rss>

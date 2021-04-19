@@ -1,6 +1,20 @@
 {{ define "main" }}
     <div class="taxo wrap">
         {{ partial "navigation.html" . }}
+        
+        {{ $title := .Title}}
+        {{ with .Site.Taxonomies.categories }}
+        {{ range $name, $taxonomy := . }}
+            {{ $term := $name }}
+            {{ if eq $term $title }}     
+                <p href="/categories/{{ $name}}/" class="btn">{{ $taxonomy.Count }} blogs</p>
+            {{ end }}
+        {{ end }}
+        {{ end }}
+
+
+
+
         {{ range .Pages }}
             <div class="value">
                 <div class="date">

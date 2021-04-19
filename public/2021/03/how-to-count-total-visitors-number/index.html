@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <title>使用Google Spreadsheet统计PV和UV | 阿凸日记</title>    
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="内心OS：没什么人看你搞这功能干嘛？...">
+<meta name="referrer" content="same-origin">
+<meta name="generator" content="Hugo 0.82.0" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+  <meta property="og:title" content="使用Google Spreadsheet统计PV和UV" />
+<meta property="og:description" content="内心OS：没什么人看你搞这功能干嘛？..." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//atutang.com/2021/03/how-to-count-total-visitors-number/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-30T21:44:20&#43;08:00" />
+<meta property="article:modified_time" content="2021-04-18T13:01:35&#43;08:00" />
+
+
+
+
+<link rel="stylesheet" href="//atutang.com/scss/style.min.473bdc2914cbf90a78182161eb68d8d3243bdc74bdf7f3f100209482cedb03995d73e81042c649cdc2be53fa7808c2e894d1c9e46b55871d36d2dae3e9682ec5.css" integrity="sha512-RzvcKRTL&#43;Qp4GCFh62jY0yQ73HS99/PxACCUgs7bA5ldc&#43;gQQsZJzcK&#43;U/p4CMLolNHJ5GtVhx020trj6WguxQ==" media="screen">
+
+<script src="/js/prism.js"></script>
+<link rel="stylesheet" href="/css/prism.css">
+<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+
+<style>@import url('https://fonts.googleapis.com/css2?family=Fira+Code&Cousine&family=Montserrat&family=Noto+Sans+SC:wght@400;700&Oswald:wght@400;700&family=Noto+Serif+SC:wght@300;400;700&display=swap');</style>
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+
+
+
+
+
+
+
+<script src="https://kit.fontawesome.com/fa02392c8f.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+
+
+
+<div class="singlepage wrap">
+  <div class="head-wrapper" style="background: url('/images/posthead.webp');background-size:cover;background-position:center;">
+    <div class="topinfo">
+      <a href="//atutang.com">
+        <img src="/images/sitelogo-small.png" alt="sitelogo">
+      </a>
+      <span class="path">
+          <a href="//atutang.com">首页</a> / <a href="/posts/">归档 </a>
+      </span>
+      <span class="tags">
+        TAG：
+          
+            <a href="//atutang.com/tags/hugo" >hugo</a>
+          
+            <a href="//atutang.com/tags/%E6%8A%98%E8%85%BE" >折腾</a>
+          
+        
+      </span>
+    </div>
+    <div class="post-title">
+
+        
+
+        <h1>使用Google Spreadsheet统计PV和UV</h1>
+        <div class="post-meta">
+            <span>
+                2021-03-30
+              </span>
+              <span class="split">
+                ·
+              </span>
+              <span>
+                
+                  约2454字
+                
+              </span>
+              <span class="split">
+                ·
+              </span>
+              <span>
+                需时5分钟
+              </span>
+        </div>
+    </div>
+  </div>
+  <div class="content">
+      <blockquote>
+<p>21年4月2日：我是沙雕，原来有现成的服务可以使用，<a href="https://busuanzi.ibruce.info/">不蒜子</a>就提供很好的网站计数服务&hellip;而且谷歌表格由于统计周期的问题，只适合用来统计PV统计。</p>
+</blockquote>
+<blockquote>
+<p>本文基于hugo已接入Google Analytics（下文统称GA）以及能够访问Google Spreadsheet为前提。大部分HUGO主题都已经默认集成了GA，至于怎么访问谷歌表格，你懂得。</p>
+</blockquote>
+<h2 id="源起">源起</h2>
+<p>经常看别人博客，总是能看到访问数，有的还能区分出PV和UV，就想着是不是也能在自己这也实现，就去搜了下解决方案，在HUGO社区的<a href="https://discourse.gohugo.io/t/total-number-of-views/9729/4">这篇帖子</a>中提到了实现这个结果的几种方法：</p>
+<ul>
+<li>接入服务器日志（因为我是架设在VERCEL上的，所以PASS）</li>
+<li>接入第三方服务（提到了<a href="https://www.reliablecounter.com/">reliablecounter</a>，一键就能生成统计代码接入站点，当时没细看，所以也PASS了）</li>
+<li>通过GA统计，但是GA屏蔽了外部的链接可能，并且准确性越来越差（貌似不大靠谱）</li>
+</ul>
+<p>在这三种办法里，在我看来，方法一可能需要自己定义UV和PV的标准，然后需要通过公式计算出所要的结果，对于我来说太复杂了；方法二应该说是标准性的问题，并没有提到统计的口径是什么。这样看来就第三种方法最适合自己了。</p>
+<p>在帖子的最后，有个用户提到了一种讨巧的读取GA数据的办法：</p>
+<blockquote>
+<p>You can set up Google Analytics to store data in a Google Calc document (stored in your Google Drive account), and that spreadsheet document can be made available online for people who know the special link. Then with Hugo’s <code>getCSV</code> function you can download and read that file.</p>
+</blockquote>
+<p>**意思就是通过谷歌表格的GA插件创建表格报表，然后再通过HUGO的<code>getCSV</code>方法调用表格里特定单元格的数据，以此方法来达成统计访问用户数量的目的。**话不多说，开搞。</p>
+<h2 id="谷歌表格设置">谷歌表格设置</h2>
+<h3 id="安装插件">安装插件</h3>
+<blockquote>
+<p>完整安装过程，<a href="https://developers.google.com/analytics/solutions/google-analytics-spreadsheet-add-on">这篇文章</a>里有进行介绍。</p>
+</blockquote>
+<ol>
+<li>创建一个新表格或使用一个现存表格；</li>
+<li>打开菜单上的【插件】 - 【获取插件】；</li>
+<li>搜索Google Analytics并将其添加到自己的插件中；</li>
+<li>接下来就可以在菜单的【插件】下看到Google Analytics了。</li>
+</ol>
+<p><img src="https://30924398.xyz:6001/images/2021/03/31/google-spreadsheet-addon.png#center" alt="image-20210331123858145"></p>
+<h3 id="建立报表并获取数据">建立报表并获取数据</h3>
+<blockquote>
+<p>如果你网站已经接入GA，并且在GA中也已经进行了相关配置，这个插件中会进行自动关联的，毕竟都是自家的产品。</p>
+</blockquote>
+<p>接下来就是通过插件来定义你要获取的数据字段，因为只是要统计PV和UV，量度（Metrics）分别取<code>Users</code>和<code>Session</code>，而维度（Dimensions）都取日期<code>Date</code>（更多的数据我也看不懂了LOL，可以在<a href="https://ga-dev-tools.appspot.com/dimensions-metrics-explorer/">GA的文档</a>里进行查看）。需要注意的是一个报告只能对应一个量度和维度，所以统计PV和UV需要创建两个报表。</p>
+<p><img src="https://30924398.xyz:6001/images/2021/03/31/ga-sets.png#center" alt="image-20210331125049198"></p>
+<p>创建完报表后，插件会自动在表格里生成一列字段及对应的之前在右侧边栏里配置的量度和维度。（无视我把UV达成了CV&hellip;）</p>
+<p><img src="https://30924398.xyz:6001/images/2021/03/31/20210331130104.png#center" alt="image-20210331130104900"></p>
+<p>需要注意的事，<strong>在创建完报表后需要在插件中点击<code>Run reports</code>才会真正生成报表</strong>，这样就会在谷歌表格里生成两个基于你自定义的报表名称的两个子表格。</p>
+<p><img src="https://30924398.xyz:6001/images/2021/03/31/20210331125748.png#center" alt="image-20210331125736724"></p>
+<p>最后因为要让这个报表定期运行，你需要在插件的<code>Schedule Reports</code>中设置好自动运行报表的间隔时间，最短间隔时间是小时。</p>
+<p><img src="https://30924398.xyz:6001/images/2021/04/01/20210401123940.png#center" alt="image-20210401123939960"></p>
+<p>至此，所有谷歌表格中的插件配置完成。</p>
+<h3 id="转换谷歌表格链接">转换谷歌表格链接</h3>
+<p>谷歌表格默认格式不是CSV，因此需要把表格链接转换为CSV的分享格式。转换的方式在<a href="https://www.highviewapps.com/blog/how-to-create-a-csv-or-excel-direct-download-link-in-google-sheets/">这篇文章</a>中有进行介绍。</p>
+<p>谷歌链接的标准格式是这样：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">https://docs.google.com/spreadsheets/d/1Gztm9o8JEPibPWEDwH54qBG5kwj51ILDOk_dxK6uTSY/edit#gid=1330027783
+</code></pre></div><p>其中 <code>1Gztm9o8JEPibPWEDwH54qBG5kwj51ILDOk_dxK6uTSY</code>是你的表格ID，gid=<code>1330027783</code>是子表的ID，因此需要获取具体一个子表的CSV链接就是下面这样（不要子表就把&amp;gid以及之后的字符去掉）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">https://docs.google.com/spreadsheets/d/1Gztm9o8JEPibPWEDwH54qBG5kwj51ILDOk_dxK6uTSY/export?format=tsv&amp;gid=1330027783
+</code></pre></div><p><strong>最后的最后，记得把谷歌表格的分享形式设置为共享，否则就会提示下面这段错误信息（不要问我怎么知道的）。</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">ERROR 2021/03/30 21:05:28 Failed to get CSV resource “https://docs.google.com/spreadsheets/d/1N8480w1hPyilUS4qK1rnSY6RiE-OX-2hy1glQCTRh_w/export?format=csv”: failed to parse CSV file https://docs.google.com/spreadsheets/d/1N8480w1hPyilUS4qK1rnSY6RiE-OX-2hy1glQCTRh_w/export?format=csv: parse error on line 3, column 11: bare &#34; in non-quoted-field
+If you feel that this should not be logged as an ERROR, you can ignore it by adding this to your site config:
+ignoreErrors = [“error-remote-getcsv”]
+ERROR 2021/03/30 21:05:28 render of “page” failed: execute of template failed: template: _default/single.html:9:6: executing “main” at &lt;index (index $csv 1) 1&gt;: error calling index: index of untyped nil
+ERROR 2021/03/30 21:05:28 render of “page” failed: execute of template failed: template: _default/single.html:9:6: executing “main” at &lt;index (index $csv 1) 1&gt;: error calling index: index of untyped nil
+ERROR 2021/03/30 21:05:28 render of “page” failed: execute of template failed: template: _default/single.html:9:6: executing “main” at &lt;index (index $csv 1) 1&gt;: error calling index: index of untyped nil
+ERROR 2021/03/30 21:05:28 render of “page” failed: execute of template failed: template: _default/single.html:9:6: executing “main” at &lt;index (index $csv 1) 1&gt;: error calling index: index of untyped nil
+Built in 32175 ms
+Error: Error building site: failed to render pages: render of “page” failed: execute of template failed: template: _default/single.html:9:6: executing “main” at &lt;index (index $csv 1) 1&gt;: error calling index: index of untyped nil
+</code></pre></div><h2 id="hugo-getcsv">HUGO getCSV</h2>
+<p><a href="https://gohugo.io/templates/data-templates/#example-for-csv-files">HUGO官方文档</a>对于<code>getCSV</code>方法的使用示例是这样的。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"> &lt;<span style="color:#f92672">table</span>&gt;
+    &lt;<span style="color:#f92672">thead</span>&gt;
+      &lt;<span style="color:#f92672">tr</span>&gt;
+      &lt;<span style="color:#f92672">th</span>&gt;Name&lt;/<span style="color:#f92672">th</span>&gt;
+      &lt;<span style="color:#f92672">th</span>&gt;Position&lt;/<span style="color:#f92672">th</span>&gt;
+      &lt;<span style="color:#f92672">th</span>&gt;Salary&lt;/<span style="color:#f92672">th</span>&gt;
+      &lt;/<span style="color:#f92672">tr</span>&gt;
+    &lt;/<span style="color:#f92672">thead</span>&gt;
+    &lt;<span style="color:#f92672">tbody</span>&gt;
+    {{ $url := &#34;https://example.com/finance/employee-salaries.csv&#34; }}
+    {{ $sep := &#34;,&#34; }}
+    {{ range $i, $r := getCSV $sep $url }}
+      &lt;<span style="color:#f92672">tr</span>&gt;
+        &lt;<span style="color:#f92672">td</span>&gt;{{ index $r 0 }}&lt;/<span style="color:#f92672">td</span>&gt;
+        &lt;<span style="color:#f92672">td</span>&gt;{{ index $r 1 }}&lt;/<span style="color:#f92672">td</span>&gt;
+        &lt;<span style="color:#f92672">td</span>&gt;{{ index $r 2 }}&lt;/<span style="color:#f92672">td</span>&gt;
+      &lt;/<span style="color:#f92672">tr</span>&gt;
+    {{ end }}
+    &lt;/<span style="color:#f92672">tbody</span>&gt;
+  &lt;/<span style="color:#f92672">table</span>&gt;
+</code></pre></div><p><em>这里没搞太清楚的是，为什么<code>$i</code>这个变量没有声明，也能用在这段代码中&hellip;</em></p>
+<p>所以我当时就依葫芦画瓢也用了<code>range</code>套在外面，像下面这样，结果死活不输出内容。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ $url := &#34;https://docs.google.com/spreadsheets/d/1N8480w1hPyilUS4qK1rnSY6RiE-OX-2hy1glQCTRh_w/export?format=csv<span style="color:#960050;background-color:#1e0010">&amp;</span>gid=1124904396&#34; }}
+{{ $csv := getCSV &#34;,&#34; $url }}
+{{ $r := 12 }}
+{{ $c := 2 }}
+&lt;<span style="color:#f92672">i</span>&gt;
+  {{ range $i,$csv }}
+    {{ index ( index $csv $r ) $c }}   
+  {{ end }}
+&lt;/<span style="color:#f92672">i</span>&gt;
+</code></pre></div><p>后来到<a href="https://discourse.gohugo.io/t/getcsv-output-nothing/32052/2">官方社区</a>一问，有个大佬回复说了下面这些内容，才发现原来不用加<code>range</code>，大概意思就是如果加了range就指向了具体某一行内容了，如果想要指向任一单元格，就要把<code>range</code>去掉。另外<code>getCSV</code>是把csv转换成数组，因此是从0开始计算单元格的。</p>
+<p><img src="https://30924398.xyz:6001/images/2021/04/01/image-20210401125535223.png#center" alt="image-20210401125535223"></p>
+<p>所以把代码换成下面这样就OK了。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ $url := &#34;https://docs.google.com/spreadsheets/d/1N8480w1hPyilUS4qK1rnSY6RiE-OX-2hy1glQCTRh_w/export?format=csv<span style="color:#960050;background-color:#1e0010">&amp;</span>gid=1124904396&#34;}}
+{{ $csv := getCSV &#34;,&#34; $url }}
+
+&lt;<span style="color:#f92672">p</span>&gt;{{ index ( index $csv 11 ) 1 }}&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div><p><code>{{ index ( index $csv 11 ) 1 }}</code>表示指向表格的第12行，第2列内容，即表格中的B12单元格。</p>
+<h2 id="总结">总结</h2>
+<p>因此完成的步骤应该如下：</p>
+<ol>
+<li>谷歌表格中创建GA报表并开启自动运行，其中Users量度表示新用户数，Sessions量度表示访问总数；</li>
+<li>将谷歌表格链接转化为CSV格式；</li>
+<li>在HUGO中使用<code>getCSV</code>方法引入CSV链接并读取表格下的具体单元格。</li>
+</ol>
+<p>最后代码如下。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;
+{{ $uvURL := &#34;https://docs.google.com/spreadsheets/d/1N8480w1hPyilUS4qK1rnSY6RiE-OX-2hy1glQCTRh_w/export?format=csv<span style="color:#960050;background-color:#1e0010">&amp;</span>gid=1124904396&#34; }}
+{{ $pvURL := &#34;https://docs.google.com/spreadsheets/d/1N8480w1hPyilUS4qK1rnSY6RiE-OX-2hy1glQCTRh_w/export?format=csv<span style="color:#960050;background-color:#1e0010">&amp;</span>gid=1100827646&#34; }}
+{{ $uvCSV := getCSV &#34;,&#34; $uvURL }}
+{{ $pvCSV := getCSV &#34;,&#34; $pvURL }}
+
+本站访问量：{{ index ( index $pvCSV 11 ) 1 }}&amp;nbsp;&amp;nbsp;您是第{{ index ( index $uvCSV 11 ) 1 }}位访问者
+&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div>
+  </div>
+  <div class="post-end-info">
+    <i class="post-end">POST END</i>
+    <i class="last-mod-time">最后编辑于：2021-04-18 13:01</i>
+  </div>
+
+  <nav class="post-pagination">
+
+    
+    <div class="prewrap active">
+        <span class="material-icons">arrow_back</span>
+        <a href="//atutang.com/2021/03/platform-ux-review/" title="一次UX走查记录">一次UX走查记录</a>
+    </div>
+    
+    
+    
+    <div class="nextwrap active">
+        <a href="//atutang.com/2021/03/centering-images-in-hugo/" title="怎么在hugo里居中对齐图片">怎么在hugo里居中对齐图片&nbsp;</a>
+        <span class="material-icons">arrow_forward</span>
+    </div>
+    
+</nav>
+  <script src="/js/backtotop.js"></script>
+<script>addBackToTop({
+    diameter: 50,
+    backgroundColor: '#2d2d2d',
+    textColor: '#ffffff'
+  })</script>
+  
+    
+ 
+<div id="waline"></div>
+<script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<script>
+  new Waline({
+    el: '#waline',
+    path: location.pathname,
+    serverURL: 'https://blogcomment-one.vercel.app',
+    visitor: true,
+    avatar: 'robohash',
+
+    emojiCDN: '//i0.hdslb.com/bfs/emote/',
+    emojiMaps: {
+      "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png@32w_32h.webp",
+      "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png@32w_32h.webp",
+      "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png@32w_32h.webp",
+      "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png@32w_32h.webp",
+      "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png@32w_32h.webp",
+      "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png@32w_32h.webp",
+      "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png@32w_32h.webp",
+      "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png@32w_32h.webp",
+      "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png@32w_32h.webp",
+      "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png@32w_32h.webp",
+      "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png@32w_32h.webp",
+      "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png@32w_32h.webp",
+      "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png@32w_32h.webp",
+      "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png@32w_32h.webp",
+      "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png@32w_32h.webp",
+      "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png@32w_32h.webp",
+      "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png@32w_32h.webp",
+      "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png@32w_32h.webp",
+      "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png@32w_32h.webp",
+      "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png@32w_32h.webp",
+      "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png@32w_32h.webp",
+      "doge": "3087d273a78ccaff4bb1e9972e2ba2a7583c9f11.png@32w_32h.webp",
+    }
+    })
+</script>
+
+
+  
+</div>
+
+<aside class="toc">
+    <header>
+    <strong>- 目录 -</strong>
+    </header>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#源起">源起</a></li>
+    <li><a href="#谷歌表格设置">谷歌表格设置</a>
+      <ul>
+        <li><a href="#安装插件">安装插件</a></li>
+        <li><a href="#建立报表并获取数据">建立报表并获取数据</a></li>
+        <li><a href="#转换谷歌表格链接">转换谷歌表格链接</a></li>
+      </ul>
+    </li>
+    <li><a href="#hugo-getcsv">HUGO getCSV</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+</aside>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const observerForTableOfContentActiveState = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+
+                if (entry.intersectionRatio > 0) {
+                    clearActiveStatesInTableOfContents();
+                    document.querySelector(`aside nav li a[href="#${id}"]`).parentElement.classList.add('active');
+                }
+            });
+        });
+        document.querySelectorAll('h1[id],h2[id],h3[id],h4[id]').forEach((section) => {
+            observerForTableOfContentActiveState.observe(section);
+        });
+    });
+
+    function clearActiveStatesInTableOfContents() {
+        document.querySelectorAll('aside nav li').forEach((section) => {
+            section.classList.remove('active');
+        });
+    }
+</script>
+
+
+<footer id="footer">
+    <script src="/js/prism.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="content">
+        <p class="copyright">
+            共 7 篇文章,合计 21080 字<br>
+    
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span><br>
+    
+           © Copyright 
+           2021
+            · 
+           Powered by <a href="http://www.gohugo.io/">Hugo</a>
+        </p>
+    </div>
+
+</footer></body>
+</html>

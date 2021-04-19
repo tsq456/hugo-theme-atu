@@ -57,10 +57,15 @@
   <div class="content">
       {{ .Content }}
   </div>
+  <div class="post-end-info">
+    <i class="post-end">POST END</i>
+    <i class="last-mod-time">最后编辑于：{{.Page.Lastmod.Format "2006-01-02 15:04"}}</i>
+  </div>
+
   {{ partial "postpagination.html" . }}
   {{ partial "backtop.html" . }}
   {{ if .Site.Params.enableComment }}
-  {{ partial "comment.html" . }}
+    {{ partial "comment.html" . }}
   {{ end }}
 </div>
 {{ partial "toc.html" . }}

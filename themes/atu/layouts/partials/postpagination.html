@@ -1,7 +1,7 @@
 <nav class="post-pagination">
 
     {{if .Next}}
-    <div class="prewrap">
+    <div class="prewrap active">
         <span class="material-icons">arrow_back</span>
         <a href="{{.Next.Permalink}}" title="{{.Next.Title}}">{{.Next.Title}}</a>
     </div>
@@ -10,7 +10,7 @@
     {{end}}
     
     {{if .Prev}}
-    <div class="nextwrap">
+    <div class="nextwrap active">
         <a href="{{.Prev.Permalink}}" title="{{.Prev.Title}}">{{.Prev.Title}}&nbsp;</a>
         <span class="material-icons">arrow_forward</span>
     </div>

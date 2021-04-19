@@ -1,4 +1,4 @@
-baseURL = "https://atugo.me"
+baseURL = "//atutang.com"
 languageCode = "zh-cn"
 title = "阿凸日记"
 theme = "atu"
@@ -20,6 +20,9 @@ enableComment = true
 
 [permalinks]
   posts = "/:year/:month/:filename/"
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]
 
 
 [[menu.main]]
