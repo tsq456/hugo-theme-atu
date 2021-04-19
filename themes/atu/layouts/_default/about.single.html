@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+{{ $path := .Dir }}
+{{ $pathname := replace .Dir "/" ""}}
+
+<div class="singlepage wrap">
+  <div class="head-wrapper" style="background: url({{- if .Params.cover_image -}}'{{- .Params.cover_image -}}'{{- else -}}'/images/posthead.webp'{{- end -}});background-size:cover;background-position:center;">
+    <div class="topinfo">
+      <a href="{{.Site.BaseURL}}">
+        <img src="/images/sitelogo-small.png" alt="sitelogo">
+      </a>
+      <span class="path">
+          <a href="{{.Site.BaseURL}}">首页</a> / <a href="{{ (site.GetPage $path).URL }}">{{ (site.GetPage $path).Title }} </a>
+      </span>
+      <span class="tags">
+        {{ with .Params.tags }}TAG：
+          {{ range . }}
+            <a href="{{ "/tags/" | absURL }}{{ . | urlize }}" >{{ . }}</a>
+          {{ end }}
+        {{ end }}
+      </span>
+    </div>
+  </div>
+  <div class="content">
+      {{ .Content }}
+  </div>
+  <div class="post-end-info">
+    <i class="post-end">POST END</i>
+    <i class="last-mod-time">最后编辑于：{{.Page.Lastmod.Format "2006-01-02 15:04"}}</i>
+  </div>
+
+  {{ partial "postpagination.html" . }}
+  {{ partial "backtop.html" . }}
+  {{ if .Site.Params.enableComment }}
+    {{ partial "comment.html" . }}
+  {{ end }}
+</div>
+{{ partial "toc.html" . }}
+{{ end }}
+

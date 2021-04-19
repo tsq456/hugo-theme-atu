@@ -2,31 +2,36 @@
     <div class="taxo wrap">
         {{ partial "navigation.html" . }}
         
-        {{ $title := .Title}}
+        {{/*  {{ $title := .Title}}
         {{ with .Site.Taxonomies.categories }}
-        {{ range $name, $taxonomy := . }}
-            {{ $term := $name }}
-            {{ if eq $term $title }}     
-                <p href="/categories/{{ $name}}/" class="btn">{{ $taxonomy.Count }} blogs</p>
+            {{ range $name, $taxonomy := . }}
+                {{ $cateterm := $name }}
+                {{ if eq $cateterm $title }}     
+                    <p>{{ $taxonomy.Count }} blogs</p>
+                {{ end }}
             {{ end }}
-        {{ end }}
-        {{ end }}
+        {{ end }}  */}}
 
+        {{/*  {{ with .Site.Taxonomies.tags }}
+            {{ range $name, $taxonomy := . }}
+                {{ $cateterm := $name }}
+                {{ if eq $cateterm $title }}     
+                    <p>{{ $taxonomy.Count }} blogs</p>
+                {{ end }}
+            {{ end }}
+        {{ end }}  */}}
 
-
-
-        {{ range .Pages }}
-            <div class="value">
-                <div class="date">
-                    {{ .Date.Format "2006-01-02" }}
+        <div class="content-wrap">
+            <div class="taxo-name">{{ .Title }}</div>
+            {{ range .Pages }}
+                <div class="post">
+                    <span>
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    </span>   
+                    <span>{{ .Date.Format "2006-01-02" }}</span>   
                 </div>
-                <div class="title">
-                    <a href="{{ .Permalink }}">
-                        {{ .Title }}
-                    </a>
-                </div>      
-            </div>
 
-        {{ end }}
+            {{ end }}
+        </div>
     </div>
 {{ end }}

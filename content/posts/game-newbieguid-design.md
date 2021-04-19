@@ -5,6 +5,7 @@ draft: false
 featured_image: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3333235385,3321941250&fm=26&gp=0.jpg"
 description: "所有关于新手设计的内容都在这里。"
 comment: true
+tags: [游戏, 设计]
 ---
 
 ## 导语

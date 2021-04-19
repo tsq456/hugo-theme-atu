@@ -26,19 +26,14 @@ enableComment = true
 
 
 [[menu.main]]
-name = "归档"
+name = "文章归档"
 url = "/posts"
 weight = "100"
 [[menu.main]]
-name = "游戏"
-url = "/text"
+name = "标签分类"
+url = "/tags"
 weight = "300"
 [[menu.main]]
-name = "关于"
+name = "关于我"
 url = "/about"
 weight = "400"
-[[menu.main]]
-name = "建设"
-url = "/construct"
-pre = "<i class='fas fa-drafting-compass'></i>"
-weight = "500"

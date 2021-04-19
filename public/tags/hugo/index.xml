@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hugo on 阿凸日记</title>
+    <title>HUGO on 阿凸日记</title>
     <link>//atutang.com/tags/hugo/</link>
-    <description>Recent content in hugo on 阿凸日记</description>
+    <description>Recent content in HUGO on 阿凸日记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 30 Mar 2021 21:44:20 +0800</lastBuildDate><atom:link href="//atutang.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
@@ -14,6 +14,15 @@
       
       <guid>//atutang.com/2021/03/how-to-count-total-visitors-number/</guid>
       <description>21年4月2日：我是沙雕，原来有现成的服务可以使用，不蒜子就提供很好的网站计数服务&amp;hellip;而且谷歌表格由于统计周期的问题，只适合用来</description>
+    </item>
+    
+    <item>
+      <title>创建游戏卡片Shortcode</title>
+      <link>//atutang.com/2021/03/how-to-build-a-game-shortcode/</link>
+      <pubDate>Tue, 23 Mar 2021 10:21:30 +0800</pubDate>
+      
+      <guid>//atutang.com/2021/03/how-to-build-a-game-shortcode/</guid>
+      <description>前言 最近这前段业余时间主要就在做两件事，疯狂肝《戴森球计划》和建博客改主题，我想他们的共通之处就在于都能够通过自己一点一滴的努力构建出想要看</description>
     </item>
     
   </channel>

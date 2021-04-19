@@ -389,9 +389,9 @@ ul, ol {
     }
     .post-divider {
         margin-top: pxTorem(12px);
-        height: 0px;
-        background: transparent;
-        border: 1px solid $divider-color;
+        height: 1px;
+        background-color: $divider-color;
+        border: none;
     }
     &:last-child .post-divider {
         border: 0px;
@@ -973,7 +973,24 @@ ul, ol {
         }
     }
 }
-
+.taxo {
+    .content-wrap {
+        padding: 3rem 10rem;
+    }
+    .post {
+        display: flex;
+        justify-content: space-between;
+        span {
+            margin-bottom: 2rem;
+        }
+    }
+    .taxo-name {
+        font-size: 2rem;
+        font-style: italic;
+        font-weight: 700;
+        margin-bottom: 3rem;
+    }
+}
 // toc style start
 .toc {
     position: fixed;

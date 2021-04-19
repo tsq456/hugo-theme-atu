@@ -5,6 +5,7 @@ draft: false
 comment: true
 description: "利用Shortcode快速构建一张最近玩过的游戏的卡片"
 toc: true
+tags: [HUGO]
 ---
 
 ### 前言
