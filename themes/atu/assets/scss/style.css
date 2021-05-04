@@ -106,6 +106,7 @@ blockquote {
     margin: 2rem 0rem;
     padding: 1rem 1rem;
     border-left: 2px solid #2d2d2d;
+    word-break: break-all;
   }
 }
 
@@ -190,6 +191,9 @@ ul, ol {
   #navigation {
     position: unset;
     height: 180px;
+  }
+  #navigation hr {
+    display: none;
   }
   #navigation .sitelogo {
     left: 50%;
@@ -374,9 +378,9 @@ ul, ol {
 
 .homepage .post-divider {
   margin-top: 0.75rem;
-  height: 0px;
-  background: transparent;
-  border: 1px solid #eee;
+  height: 1px;
+  background-color: #eee;
+  border: none;
 }
 
 .homepage:last-child .post-divider {
@@ -426,6 +430,12 @@ ul, ol {
   background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.6) 100%);
 }
 
+.singlepage .head-wrapper .post-title a {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #a7a7a7;
+}
+
 .singlepage .head-wrapper .post-title h1 {
   color: white;
   padding: 0 1rem;
@@ -464,13 +474,8 @@ ul, ol {
 }
 
 @media screen and (max-width: 640px) {
-  .singlepage .post-end-info .post-end {
-    display: block;
-    text-align: center;
-  }
-  .singlepage .post-end-info .last-mod-time {
-    display: none;
-    color: #999999;
+  .singlepage .post-end-info {
+    margin-left: 1rem;
   }
 }
 
@@ -497,9 +502,9 @@ ul, ol {
 }
 
 .singlepage .post-end-info .last-mod-time {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+  display: block;
+  margin-top: 1rem;
+  color: #707070;
 }
 
 .singlepage .topinfo {
@@ -1058,6 +1063,12 @@ ul, ol {
   margin-top: 3rem;
 }
 
+@media screen and (max-width: 640px) {
+  .terms .cate, .terms .tag {
+    padding: 1rem 2rem;
+  }
+}
+
 .terms .cate a {
   margin-top: 1.25rem;
   margin-right: 2rem;
@@ -1092,6 +1103,32 @@ ul, ol {
 
 .terms .tag a:hover span {
   color: #f3f3f3;
+}
+
+.taxo .content-wrap {
+  padding: 3rem 10rem;
+}
+
+@media screen and (max-width: 640px) {
+  .taxo .content-wrap {
+    padding: 3rem 2rem;
+  }
+}
+
+.taxo .post {
+  display: flex;
+  justify-content: space-between;
+}
+
+.taxo .post span {
+  margin-bottom: 2rem;
+}
+
+.taxo .taxo-name {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 3rem;
 }
 
 .toc {

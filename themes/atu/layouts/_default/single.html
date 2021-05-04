@@ -24,9 +24,7 @@
 
         {{ with .Params.categories }}
             {{ range . }}
-                <a href="{{ "/categories/" | absURL }}{{ . | urlize }}" >
-                    x {{ . }} x
-                </a>
+                <a href="{{ "/categories/" | absURL }}{{ . | urlize }}" >x&nbsp;{{- . -}}&nbsp;x</a>
             {{ end }}
         {{ end }}
 

@@ -8,7 +8,7 @@ paginate = 8
 
 hasCJKLanguage = true
 googleAnalytics = "UA-59524632-1"
-
+summaryLength = 400
 OpenGraph = true
 
 [Params]
@@ -34,6 +34,6 @@ name = "标签分类"
 url = "/tags"
 weight = "300"
 [[menu.main]]
-name = "关于我"
+name = "关于"
 url = "/about"
 weight = "400"

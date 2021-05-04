@@ -1,7 +1,8 @@
 ---
-title:  "关于我我我"
+title:  "关于我"
 date: "2021-03-22"
 comment: false
+layouts: single.html
 ---
 
 

@@ -3,7 +3,6 @@ title: "使用Google Spreadsheet统计PV和UV"
 date: 2021-03-30T21:44:20+08:00
 draft: false
 comment: true
-description: "内心OS：没什么人看你搞这功能干嘛？..."
 featured_image: 
 tags: [hugo,折腾]
 toc: true

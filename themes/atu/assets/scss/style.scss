@@ -172,6 +172,7 @@ blockquote {
         margin: 2rem 0rem;
         padding: 1rem 1rem;
         border-left: 2px solid $default-font-color;
+        word-break: break-all;
     }
     p {
         color: $default-font;
@@ -240,6 +241,9 @@ ul, ol {
     @media screen and (max-width:640px) {
         position: unset;
         height: 180px;
+        hr {
+            display: none;
+        }
         .sitelogo {
             left: 50%;
             transform: translateX(-50%);
@@ -434,6 +438,11 @@ ul, ol {
         padding-bottom: 40px;
         text-align: center;
         background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+        a {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: rgb(167, 167, 167);
+        }
     }
     .head-wrapper .post-title h1 {
         color: white;
@@ -463,14 +472,7 @@ ul, ol {
         margin-top: 3rem;
         position: relative;
         @media screen and (max-width:640px) {
-            .post-end {
-                display: block;
-                text-align: center;
-            }
-            .last-mod-time {
-                display: none;
-                color: $last-font-color;
-            }
+            margin-left: 1rem;
         }
         .post-end {
             font-family: $last-font;
@@ -493,9 +495,9 @@ ul, ol {
             }
         }
         .last-mod-time {
-            position: absolute;
-            right: 0;
-            bottom: 0;
+            display: block;
+            margin-top: 1rem;
+            color: $sencondary-font-color;
         }
     }
 }
@@ -940,6 +942,9 @@ ul, ol {
     .cate, .tag {
         padding: 1rem 8rem;
         margin-top: 3rem;
+        @media screen and (max-width:640px) {
+            padding: 1rem 2rem;
+        }
     }
     .cate {
         a {
@@ -976,6 +981,9 @@ ul, ol {
 .taxo {
     .content-wrap {
         padding: 3rem 10rem;
+        @media screen and (max-width:640px) {
+            padding: 3rem 2rem;
+        }
     }
     .post {
         display: flex;
