@@ -15,6 +15,7 @@ categories: [设计]
 
 ![img](https://30924398.xyz:6001/images/2020/12/30/D1ip0DrRzJroDTn4f9dbd248de26f2ab.png#center)
 
+
 ## 商业化界面的本质
 
 商业化界面的本质就是玩家（消费者）选购商品的过程，而消费者购买决策的过程基本分为以下五步：

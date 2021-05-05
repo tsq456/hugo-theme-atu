@@ -5,6 +5,7 @@ draft: false
 comment: true
 cover_image: 
 tags: [hugo,折腾]
+categories: [Code]
 toc: true
 ---
 21年4月2日：我是沙雕，原来有现成的服务可以使用，[不蒜子](https://busuanzi.ibruce.info/)就提供很好的网站计数服务...而且谷歌表格由于统计周期的问题，只适合用来统计PV统计。
