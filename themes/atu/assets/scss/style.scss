@@ -167,7 +167,7 @@ blockquote {
     padding: 2rem 4rem;
     font-family: $accent-font;
     position: relative;
-    z-index: 999;
+    z-index: 0;
     @media screen and (max-width:640px) {
         margin: 2rem 0rem;
         padding: 1rem 1rem;
@@ -186,7 +186,7 @@ blockquote {
         color:rgb(184, 184, 184);
         position: absolute;
         top: pxTorem(20px);
-        left: 20px;
+        left: 12px;
         z-index: -1;
         @media screen and (max-width:640px) {
             display: none;
@@ -744,6 +744,23 @@ ul, ol {
             color: $front-bg-color;
             font-weight: 400 !important;
         }
+        figure {
+            margin: pxTorem(50px) auto;
+            img {
+                margin-bottom: 10px !important;
+            }
+            figcaption h4 {
+                margin-top: 0;
+                margin-bottom: 50px;
+                color: $last-font-color;
+                text-align: center;
+                font-size: 14px;
+                font-weight: normal;
+                &:hover::before {
+                    content: "";
+                }
+            }
+        }
     }
 }
 // singlepage words style end
@@ -1013,7 +1030,6 @@ ul, ol {
     position: fixed;
     top: 10rem;
     left: calc((100vw - 920px) / 2 + 930px);
-    z-index: 999;
     a {
         font-size: pxTorem(12px);
     }
