@@ -5,6 +5,6 @@ tags:
 categories:
 draft: false
 description: ""
-featured_image: ""
+cover_image: ""
 comment : true
 ---

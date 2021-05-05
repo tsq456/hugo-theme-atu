@@ -2,7 +2,7 @@
 title: "游戏商业化界面设计"
 date: 2021-03-22T20:29:23+08:00
 draft: false
-featured_image: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=568761513,1618518048&fm=26&gp=0.jpg"
+cover_image: 
 description: "怎么让你设计的商业化界面更符合项目需求。"
 comment: true
 tags: [游戏, 设计, 工作]
@@ -24,6 +24,7 @@ categories: [设计]
 - 评估选择 - 就是玩家在思考决策的过程，评估商品选项的性价比（土豪玩家除外）
 - 购买决定 - 在游戏中就是点击“购买”按钮这一行为
 - 购后评估 - 映射到游戏中就是点击“购买”按钮后的反馈         
+<!--more-->
 
   ![img](https://uploader.shimo.im/f/LLvHOTKuOT00ER8m.png#center)
 

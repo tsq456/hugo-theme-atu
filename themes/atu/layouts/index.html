@@ -14,10 +14,10 @@
             {{ if .Params.cover_image }}
                 <a class="post-cover" href='{{ .RelPermalink }}'>
                     <img 
-                    src="{{ .Params.cover_image }}"
+                    src="{{ .Params.cover_image }}" class="linked-img"
                     /></a>
             {{ end }}
-            <p class="post-summary">{{ .Summary | plainify }}</p>
+            <div class="post-summary">{{ .Summary }}</div>
 
             <div class="post-meta">
 
