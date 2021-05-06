@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 jobs:
-  built-and-deploy:
+  build-and-deploy:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -28,8 +28,8 @@ jobs:
 
       - name: Scan public keys
         run: |
-        ssh-keyscan ${{ secrets.ATU_HOST }} >> ~/.ssh/known_hosts
-        
+          ssh-keyscan ${{ secrets.ATU_HOST }} >> ~/.ssh/known_hosts
+
       - name: Deploy
         run: |
-        rsync -av --delete public ubuntu@${{ secrets.ATU_HOST }}:/var/www/html/blog
+          rsync -av --delete public ubuntu@${{ secrets.ATU_HOST }}:/var/www/html/blog
