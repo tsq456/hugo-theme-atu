@@ -10,7 +10,7 @@
 
 {{ $styles:= resources.Get "/scss/style.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint "sha512" }}
 <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
-
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>
 <script src="{{ "/js/prism.js" | relURL }}"></script>
 <link rel="stylesheet" href="{{ "/css/prism.css" | relURL }}">
 <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
