@@ -16,7 +16,7 @@ jobs:
           key: ${{ secrets.ATU_SECRET }}
           port: 22
           script: |
-            cd /var/www/test
+            cd /var/www/test1
       
       - uses: actions/checkout@v2
         with:
@@ -31,3 +31,5 @@ jobs:
 
       - name: Build
         run: hugo --minify
+
+        
