@@ -16,6 +16,9 @@ jobs:
           key: ${{ secrets.ATU_SECRET }}
           port: 22
           script: |
-            cd /var/www
-            git pull origin master
-            git status
+            cd /var/www/test
+      
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
