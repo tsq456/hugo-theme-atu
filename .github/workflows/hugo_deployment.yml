@@ -16,6 +16,6 @@ jobs:
           key: ${{ secrets.ATU_SECRET }}
           port: 22
           script: |
-            cd /var/www/test1
-            touch nameless
+            cd /var/www/hugo-theme-atu
+            git pull
 
