@@ -27,10 +27,10 @@ jobs:
           ssh-private-key: ${{ secrets.ATU_SECRET }}
 
       - name: Scan public keys
-          run: |
-          ssh-keyscan ${{ secrets.ATU_HOST }} >> ~/.ssh/known_hosts
+        run: |
+        ssh-keyscan ${{ secrets.ATU_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy
-          run: |
-          rsync -av --delete public ubuntu@${{ secrets.ATU_HOST }}:/var/www/html/blog
+        run: |
+        rsync -av --delete public ubuntu@${{ secrets.ATU_HOST }}:/var/www/html/blog
 
