@@ -8,22 +8,14 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: '0.82.0'
-          extended: true
-
-      - name: Build
-        run: hugo --minify
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.ATU_SECRET }}
-          publish_dir: ./var/www/test
+      - name: Connect To Tencent Server 
+        uses: appleboy/ssh-action@master
+        with: 
+          host: atutang.com
+          username: ubuntu
+          key: ${{ secrets.ATU_SECRET }}
+          port: 22
+          script: |
+            cd /var/www
+            git pull origin master
+            git status
