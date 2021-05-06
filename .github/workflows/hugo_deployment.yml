@@ -8,16 +8,10 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
-      - name: Connect To Tencent Server 
-        uses: appleboy/ssh-action@master
-        with: 
-          host: atutang.com
-          username: ubuntu
-          key: ${{ secrets.ATU_SECRET }}
-          port: 22
-          script: |
-            cd /var/www/hugo-theme-atu
-            git pull
+      - uses: actions/checkout@v2
+        with:
+          # submodules: true
+          fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -25,6 +19,18 @@ jobs:
           hugo-version: '0.82.0'
           extended: true
 
-      - name: Build Site
+      - name: Build
         run: hugo --minify
+
+      - uses: webfactory/ssh-agent@v0.5.2
+        with:
+          ssh-private-key: ${{ secrets.ATU_SECRET }}
+
+      - name: Scan public keys
+          run: |
+          ssh-keyscan ${{ secrets.ATU_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy
+          run: |
+          rsync -av --delete public ubuntu@${{ secrets.ATU_HOST }}:/var/www/html/blog
 
