@@ -30,6 +30,6 @@ jobs:
         run: |
         ssh-keyscan ${{ secrets.ATU_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Deploy
+      - name: Generate and Deploy
         run: |
         rsync -av --delete public ubuntu@${{ secrets.ATU_HOST }}:/var/www/html/blog
