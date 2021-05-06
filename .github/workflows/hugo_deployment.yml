@@ -32,4 +32,4 @@ jobs:
 
       - name: Deploy
         run: |
-          rsync -av --delete public ubuntu@${{ secrets.ATU_HOST }}:/var/www/
+          rsync -av --delete blog ubuntu@${{ secrets.ATU_HOST }}:/var/www/
