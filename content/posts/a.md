@@ -1,5 +1,5 @@
 ---
-title: "A"
+title: "This is a test article"
 date: 2021-05-06T23:06:40+08:00
 tags:
 categories:
@@ -8,6 +8,8 @@ description: ""
 cover_image: ""
 comment : true
 ---
+HeLLLLLLLLO WORLLLLLLLLLLLLLLLLLLD!!!!!!!!!!!
+
 Hugo’s CLI is fully featured but simple to use, even for those who have very limited experience working from the command line.
 The following is a description of the most common commands you will use while developing your Hugo project. See the Command Line Reference for a comprehensive view of Hugo’s CLI.
 
