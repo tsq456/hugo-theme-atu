@@ -19,3 +19,12 @@ jobs:
             cd /var/www/hugo-theme-atu
             git pull
 
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.82.0'
+          extended: true
+
+      - name: Build Site
+        run: hugo --minify
+
