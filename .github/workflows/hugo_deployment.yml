@@ -34,14 +34,14 @@ jobs:
         run: |
           rsync -av --delete public ubuntu@${{ secrets.ATU_HOST }}:/var/www/blog
 
-      - name: Send mail
-        uses: dawidd6/action-send-mail@v3
-        with: 
-           server_address: smtp.gmail.com
-           server_port: 465
-           username: ${{ secrets.MAIL_USERNAME }}
-           password: ${{ secrets.MAIL_PASSWORD }}
-           subject: Github Actions 执行结果
-           to: 30924398@qq.com
-           from: 阿汤
-           body: 博客更新成功！
+      # - name: Send mail
+      #   uses: dawidd6/action-send-mail@v3
+      #   with: 
+      #      server_address: smtp.gmail.com
+      #      server_port: 465
+      #      username: ${{ secrets.MAIL_USERNAME }}
+      #      password: ${{ secrets.MAIL_PASSWORD }}
+      #      subject: Github Actions 执行结果
+      #      to: 30924398@qq.com
+      #      from: 阿汤
+      #      body: 博客更新成功！
