@@ -39,9 +39,9 @@ jobs:
         with: 
            server_address: smtp.gmail.com
            server_port: 465
-           username: ${{secrets.MAIL_USERNAME}}
-           password: ${{secrets.MAIL_PASSWORD}}
+           username: ${{ secrets.MAIL_USERNAME }}
+           password: ${{ secrets.MAIL_PASSWORD }}
            subject: Github Actions 执行结果
            to: 30924398@qq.com
-           from: 阿汤
+           from: 阿汤测试
            body: 博客更新成功！
