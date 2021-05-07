@@ -1,26 +1,6 @@
 {{ define "main" }}
     <div class="taxo wrap">
         {{ partial "navigation.html" . }}
-        
-        {{/*  {{ $title := .Title}}
-        {{ with .Site.Taxonomies.categories }}
-            {{ range $name, $taxonomy := . }}
-                {{ $cateterm := $name }}
-                {{ if eq $cateterm $title }}     
-                    <p>{{ $taxonomy.Count }} blogs</p>
-                {{ end }}
-            {{ end }}
-        {{ end }}  */}}
-
-        {{/*  {{ with .Site.Taxonomies.tags }}
-            {{ range $name, $taxonomy := . }}
-                {{ $cateterm := $name }}
-                {{ if eq $cateterm $title }}     
-                    <p>{{ $taxonomy.Count }} blogs</p>
-                {{ end }}
-            {{ end }}
-        {{ end }}  */}}
-
         <div class="content-wrap">
             <div class="taxo-name">{{ .Title }}</div>
             {{ range .Pages }}

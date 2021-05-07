@@ -3,7 +3,7 @@
 
 <div class="homepage wrap">
     {{- partial "navigation.html" . -}}
-    {{ range $paginator.Pages }}
+    {{ range where .Site.RegularPages "Params.date" "!=" nil }}
         <article class="homepage-posts">
             <h1 class="post-title">
                 <a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a>

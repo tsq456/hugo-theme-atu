@@ -1,0 +1,22 @@
+{{ define "main" }}
+    <div class="singlepage wrap">
+        <div id="navigation">
+            <a href="{{.Site.BaseURL}}" class="sitelogo">
+                <img src="/images/sitelogo.png" alt="sitelogo">
+            </a>
+            <ul class="menu-list">
+                <li>
+                    {{ $currentPage := . }}
+                    {{ range .Site.Menus.main }}
+                        <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>
+                    {{ end }}
+                </li>
+            </ul>
+            <hr>
+        </div>
+        <div class="content">
+            <h1>{{ .Title }}</h1>
+            {{ .Content }}
+        </div>
+    </div>
+{{ end }}

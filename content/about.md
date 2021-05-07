@@ -1,11 +1,8 @@
 ---
-title:  "关于我"
-date: "2021-03-22"
+title:  "关于"
 comment: false
-layouts: single.html
+layout: globalpage
 ---
-
-
 
 ### 职业
 
