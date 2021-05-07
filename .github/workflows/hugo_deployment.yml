@@ -43,5 +43,5 @@ jobs:
            password: ${{ secrets.MAIL_PASSWORD }}
            subject: Github Actions 执行结果
            to: 30924398@qq.com
-           from: 阿汤测试1号
+           from: 阿汤
            body: 博客更新成功！

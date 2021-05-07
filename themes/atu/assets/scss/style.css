@@ -98,7 +98,7 @@ blockquote {
   padding: 2rem 4rem;
   font-family: "Noto Serif SC", Helvetica;
   position: relative;
-  z-index: 999;
+  z-index: 0;
 }
 
 @media screen and (max-width: 640px) {
@@ -123,7 +123,7 @@ blockquote::after {
   color: #b8b8b8;
   position: absolute;
   top: 1.25rem;
-  left: 20px;
+  left: 12px;
   z-index: -1;
 }
 
@@ -276,15 +276,23 @@ ul, ol {
   transition: ease-out .3s all;
 }
 
-.homepage .homepage-posts img:hover {
+.homepage .homepage-posts .linked-img:hover {
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
   transform: translateY(-10px);
   transition: ease-out .3s all;
 }
 
-.homepage .homepage-posts .post-summary {
-  text-align: left;
-  color: #707070;
+.homepage .homepage-posts .post-summary p {
+  text-indent: 2em;
+  color: #2d2d2d;
+  line-height: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.homepage .homepage-posts .post-summary h2 {
+  margin: 3rem auto 2rem;
+  padding-left: 1rem;
+  border-left: 4px solid #2d2d2d;
 }
 
 .homepage .homepage-posts .post-meta {
@@ -433,7 +441,7 @@ ul, ol {
 .singlepage .head-wrapper .post-title a {
   display: inline-block;
   margin-bottom: 1rem;
-  color: #a7a7a7;
+  color: #f3f3f3;
 }
 
 .singlepage .head-wrapper .post-title h1 {
@@ -820,6 +828,27 @@ ul, ol {
   font-weight: 400 !important;
 }
 
+.singlepage .content figure {
+  margin: 3.125rem auto;
+}
+
+.singlepage .content figure img {
+  margin-bottom: 10px !important;
+}
+
+.singlepage .content figure figcaption h4 {
+  margin-top: 0;
+  margin-bottom: 50px;
+  color: #999999;
+  text-align: center;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.singlepage .content figure figcaption h4:hover::before {
+  content: "";
+}
+
 #waline .v[data-class=v] .vwrap .vheader .vinput {
   border-bottom: 1px solid #f0f0f0;
 }
@@ -1135,7 +1164,6 @@ ul, ol {
   position: fixed;
   top: 10rem;
   left: calc((100vw - 920px) / 2 + 930px);
-  z-index: 999;
 }
 
 .toc a {
