@@ -15,10 +15,18 @@
 <link rel="stylesheet" href="{{ "/css/prism.css" | relURL }}">
 <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
 
-<style>@import url('https://fonts.googleapis.com/css2?family=Fira+Code&Cousine&family=Montserrat&family=Noto+Sans+SC:wght@400;700&Oswald:wght@400;700&family=Noto+Serif+SC:wght@300;400;700&display=swap');</style>
+<style>@import url('https://fonts.font.im/css?family=Fira+Code|Cousine|Montserrat|Noto+Sans+SC:400,700|Oswald:400,700|Noto+Serif+SC:300,400,700');</style>
 <link rel="shortcut icon" href="{{ "/images/favicon.ico" | relURL }}" type="image/x-icon" />
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/css/OverlayScrollbars.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/js/OverlayScrollbars.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    //The first argument are the elements to which the plugin shall be initialized
+    //The second argument has to be at least a empty object or a object with your desired options
+    OverlayScrollbars(document.querySelectorAll("body"), { });
+  });
+</script>
 {{ if .Site.Params.enableGoogleAnalytics }} 
     {{ template "_internal/google_analytics_async.html" . }}
 {{ end }}

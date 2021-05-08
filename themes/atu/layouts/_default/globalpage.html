@@ -5,7 +5,7 @@
                 <img src="/images/sitelogo.png" alt="sitelogo">
             </a>
             <ul class="menu-list">
-                <li style="list-style: none;">
+                <li style="list-style: none; line-height: unset;">
                     {{ $currentPage := . }}
                     {{ range .Site.Menus.main }}
                         <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>
@@ -18,5 +18,8 @@
             <title>{{ .Title }}</title>
             {{ .Content }}
         </div>
+        {{ if .Site.Params.enableComment }}
+        {{ partial "comment.html" . }}
+      {{ end }}
     </div>
 {{ end }}
