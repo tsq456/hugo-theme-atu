@@ -1,25 +1,25 @@
 {{ define "main" }}
-    <div class="singlepage wrap">
-        <div id="navigation">
-            <a href="{{.Site.BaseURL}}" class="sitelogo">
-                <img src="/images/sitelogo.png" alt="sitelogo">
-            </a>
-            <ul class="menu-list">
-                <li style="list-style: none; line-height: unset;">
-                    {{ $currentPage := . }}
-                    {{ range .Site.Menus.main }}
-                        <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>
-                    {{ end }}
-                </li>
-            </ul>
-            <hr>
-        </div>
-        <div class="content special-single-page">
-            <title>{{ .Title }}</title>
-            {{ .Content }}
-        </div>
-        {{ if .Site.Params.enableComment }}
-        {{ partial "comment.html" . }}
-      {{ end }}
+<div class="singlepage wrap">
+    <div id="navigation">
+        <a href="{{.Site.BaseURL}}" class="sitelogo">
+            <img src="/images/sitelogo.png" alt="sitelogo">
+        </a>
+        <ul class="menu-list">
+            <li style="list-style: none; line-height: unset;">
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                    <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>
+                {{ end }}
+            </li>
+        </ul>
+        <hr>
     </div>
+    <div class="content special-single-page">
+        <title>{{ .Title }}</title>
+        {{ .Content }}
+    </div>
+    {{ if .Params.comment }}
+        {{ partial "comment.html" . }}
+    {{ end }}
+</div>
 {{ end }}
