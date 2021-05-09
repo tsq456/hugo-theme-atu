@@ -22,13 +22,6 @@
 <style>@import url('https://fonts.font.im/css?family=Fira+Code|Cousine|Montserrat|Noto+Sans+SC:400,700|Oswald:400,700|Noto+Serif+SC:300,400,700');</style>
 <link rel="shortcut icon" href="{{ "/images/favicon.ico" | relURL }}" type="image/x-icon" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/css/OverlayScrollbars.min.css">
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/js/OverlayScrollbars.min.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    OverlayScrollbars(document.querySelectorAll("body"), { });
-  });
-</script>
 {{ if .Site.Params.enableGoogleAnalytics }} 
     {{ template "_internal/google_analytics_async.html" . }}
 {{ end }}
