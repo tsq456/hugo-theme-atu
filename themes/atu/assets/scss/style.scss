@@ -728,12 +728,14 @@ ul, ol {
         }
         pre {
             margin: pxTorem(20px) auto pxTorem(40px);
+            overflow-x: scroll;
+            padding: 20px;
+            border-radius: 5px;
         }
         code {
             font-family: $code-font;
             word-wrap:break-word;
-            word-break:normal; 
-            white-space: pre-wrap;
+            word-break:normal;
         }
         p code,
         li code {
