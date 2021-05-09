@@ -51,7 +51,9 @@ layout: globalpage
 
 + [typo.css](https://github.com/sofish/typo.css),一套国人写的致力于提升中文网页阅读体验的CSS样式，虽然没有真正引用，但是后来看到还是启发很大，后续可能会根据其进行正文样式的优化。
 
-+ [OverlayScrollbars](https://github.com/KingSora/OverlayScrollbars)，替代原生浏览器滚动条并让滚动条悬浮在页面之上的JS插件，虽然有点大材小用，但是实在没法忍受无滚动页面和有滚动页面之间的横向跳动。
++ [vanilla-back-to-top](https://github.com/vfeskov/vanilla-back-to-top)，一款回到顶部的JS插件
+
++ ~~[OverlayScrollbars](https://github.com/KingSora/OverlayScrollbars)，替代原生浏览器滚动条并让滚动条悬浮在页面之上的JS插件，虽然有点大材小用，但是实在没法忍受无滚动页面和有滚动页面之间的横向跳动。~~ 因为和上面一个插件冲突了，自己又不会改，只能放弃。**易用性大于美观性...**
 
 最后就是[HUGO社区](https://discourse.gohugo.io/)，因为国内实在没有太多关于hugo复杂问题的答案，而在官方社区内基本都能找到答案，并且氛围友好。
 
