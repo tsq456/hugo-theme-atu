@@ -728,7 +728,7 @@ ul, ol {
         }
         pre {
             margin: pxTorem(20px) auto pxTorem(40px);
-            overflow-x: scroll;
+            overflow-x: auto;
             padding: 20px;
             border-radius: 5px;
         }
