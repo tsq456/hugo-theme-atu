@@ -5,7 +5,7 @@ tags: [翻译, 重设计]
 categories: [翻译]
 draft: false
 description: ""
-cover_image: "https://30924398.xyz:6001/images/2021/04/24/https253A252F252Fmiro.medium.com252Fmax252F2280252F1WgrmihQt8T4ULWfSPWFuOA.png#center"
+cover_image: "https://img.atutang.com/notion-redesign/1.png!loss#center"
 comment : true
 ---
 这是正儿八经的第一篇翻译文章，后面如果能坚持下去可能也会变成一个系列。可是为什么要翻译？最直接的原因是因为想更新文章，但是一时半会儿没内容怎么办？那就找文章翻译呗，既能学习外国同行的经验，也能锻炼英文水平，还能丰富博客文章，一举三得，何乐不为。
