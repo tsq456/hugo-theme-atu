@@ -14,6 +14,8 @@ layout: globalpage
 
 ### 关于博客
 
+由HUGO驱动，当前运行于腾讯云轻量服务器上，web服务器为Caddy（吹爆，Caddyfile的易用性甩Nginx几条街），云储存用的又拍云。
+
 从20年底动了造个博客的心思之后，陆陆续续使用过以下几款博客引擎：
 
 + [Hexo](https://hexo.io)，静态博客引擎
