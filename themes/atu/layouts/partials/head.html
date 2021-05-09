@@ -10,9 +10,13 @@
 
 {{ $styles:= resources.Get "/scss/style.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint "sha512" }}
 <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+
+{{ if .IsPage }}
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js" async></script>
 <script src="{{ "/js/prism.js" | relURL }}" async></script>
 <link rel="stylesheet" href="{{ "/css/prism.css" | relURL }}">
+{{ end }}
+
 <link href="https://fonts.font.im/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
 
 <style>@import url('https://fonts.font.im/css?family=Fira+Code|Cousine|Montserrat|Noto+Sans+SC:400,700|Oswald:400,700|Noto+Serif+SC:300,400,700');</style>
@@ -22,8 +26,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/js/OverlayScrollbars.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    //The first argument are the elements to which the plugin shall be initialized
-    //The second argument has to be at least a empty object or a object with your desired options
     OverlayScrollbars(document.querySelectorAll("body"), { });
   });
 </script>
