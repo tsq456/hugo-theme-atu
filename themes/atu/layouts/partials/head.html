@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
 
 {{ if .IsPage }}
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js" async></script>
+<script src="{{ "/js/lazyload.min.js | relURL "}}" async></script>
 <script src="{{ "/js/prism.js" | relURL }}" async></script>
 <link rel="stylesheet" href="{{ "/css/prism.css" | relURL }}">
 {{ end }}
