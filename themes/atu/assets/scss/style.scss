@@ -768,31 +768,47 @@ ul, ol {
 // singlepage words style end
 // waline hack
 #waline {
-    .v[data-class=v] .vwrap .vheader .vinput {border-bottom: 1px solid #f0f0f0;}
-    .vwrap {
-        border-radius: 0px !important;
-        border-right: none !important;
-        border-left: none !important;
+    .v[data-class=v] * {
+        box-sizing: border-box;
     }
-    .vpower {
-        margin-right: 10px;
-        a {color: $accent-color;}
-    }
-    .vcount {
-        margin-left: 10px;
-    }
-    .vcard {
+
+    .vcards {
         padding: 10px;
-        .vnick {
-            color: $default-font-color;
-            font-weight: 700;
+        .vcard svg:hover {
+            fill: $accent-color;
         }
     }
-    .vcontent {
-        font-size: $default-font-size;
+    .vbtn:hover {
+        border-color: $accent-color !important;
+        color: $accent-color !important;
+        transition-duration: .2s !important
     }
-    .vat {
-        float: unset !important;
+    .veditor {
+        padding: 10px;
+        border-radius: 0;
+        width: calc(100% - 1.5em);
+        &:focus {
+            background-color: transparent !important;
+        }
+    }
+    .vitem input:focus {
+        background-color: transparent !important;
+    }
+    .vpower {
+        margin: 0 10px !important;
+        a {color: $accent-color;}
+    }
+    .vcomment {
+        border-top: 1px solid $divider-color;
+        border-bottom: 1px solid $divider-color;
+        padding: 10px;
+        .vpanel {
+            border-radius: unset;
+            border: 0px;
+            .vheader {
+                border-bottom: 1px solid $divider-color;            
+            }
+        }
     }
 }
 // waline hack end

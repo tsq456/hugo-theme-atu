@@ -8,16 +8,12 @@ html {
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-  width: 0;
-}
-
 body {
   background-color: #f1f1f1;
-  color: #2d2d2d;
+  color: #333;
   font-size: 1rem;
   line-height: 1.8rem;
-  font-family: "Noto Sans SC", Helvetica;
+  font-family: "Noto Sans SC", "Microsoft YaHei", SimHei;
   text-rendering: optimizeLegibility !important;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -30,8 +26,8 @@ img {
 
 a {
   text-decoration: none;
-  font-family: "Noto Sans SC", Helvetica;
-  color: #2d2d2d;
+  font-family: "Noto Sans SC", "Microsoft YaHei", SimHei;
+  color: #333;
 }
 
 a:hover {
@@ -100,7 +96,7 @@ blockquote {
   background-color: #f3f3f3;
   margin: 2rem -4rem;
   padding: 2rem 4rem;
-  font-family: "Noto Serif SC", Helvetica;
+  font-family: "Noto Serif SC", FangSong;
   position: relative;
   z-index: 0;
 }
@@ -109,13 +105,13 @@ blockquote {
   blockquote {
     margin: 2rem 0rem;
     padding: 1rem 1rem;
-    border-left: 2px solid #2d2d2d;
+    border-left: 2px solid #333;
     word-break: break-all;
   }
 }
 
 blockquote p {
-  color: "Noto Sans SC", Helvetica;
+  color: "Noto Sans SC", "Microsoft YaHei", SimHei;
   margin-bottom: 0 !important;
 }
 
@@ -163,7 +159,7 @@ ul, ol {
   position: absolute;
   left: 1rem;
   bottom: 1rem;
-  color: #2d2d2d;
+  color: #333;
 }
 
 #navigation .menu-list {
@@ -259,7 +255,7 @@ ul, ol {
 }
 
 .homepage .homepage-posts .post-title a:hover {
-  border-bottom: 1px solid #2d2d2d;
+  border-bottom: 1px solid #333;
 }
 
 .homepage .homepage-posts .post-date {
@@ -288,7 +284,7 @@ ul, ol {
 
 .homepage .homepage-posts .post-summary p {
   text-indent: 2em;
-  color: #2d2d2d;
+  color: #333;
   line-height: 2rem;
   margin-bottom: 1.5rem;
 }
@@ -296,7 +292,7 @@ ul, ol {
 .homepage .homepage-posts .post-summary h2 {
   margin: 3rem auto 2rem;
   padding-left: 1rem;
-  border-left: 4px solid #2d2d2d;
+  border-left: 4px solid #333;
 }
 
 .homepage .homepage-posts .post-meta {
@@ -423,7 +419,7 @@ ul, ol {
 
 .singlepage .head-wrapper .sitename {
   position: absolute;
-  color: #2d2d2d;
+  color: #333;
   font-size: 2rem;
   font-weight: 700;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
@@ -663,7 +659,7 @@ ul, ol {
   content: "";
   width: 6rem;
   height: .3rem;
-  background-color: #7a7a7a;
+  background-color: gray;
   bottom: -.7rem;
   left: 50%;
   transform: translateX(-50%);
@@ -680,7 +676,7 @@ ul, ol {
 .singlepage .content h2 {
   margin: 3rem auto 2rem;
   padding-left: 1rem;
-  border-left: 4px solid #2d2d2d;
+  border-left: 4px solid #333;
 }
 
 .singlepage .content h3, .singlepage .content h4, .singlepage .content h5, .singlepage .content h6 {
@@ -783,7 +779,7 @@ ul, ol {
   padding: 0 0.25rem;
   border-radius: 2px;
   color: #ffffff;
-  background-color: #2d2d2d;
+  background-color: #333;
 }
 
 .singlepage .content .footnotes .footnote-backref {
@@ -813,13 +809,15 @@ ul, ol {
 
 .singlepage .content pre {
   margin: 1.25rem auto 2.5rem;
+  overflow-x: auto;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .singlepage .content code {
   font-family: "Fira Code", Montserrat, Cousine;
   word-wrap: break-word;
   word-break: normal;
-  white-space: pre-wrap;
 }
 
 .singlepage .content p code,
@@ -853,43 +851,59 @@ ul, ol {
   content: "";
 }
 
-#waline .v[data-class=v] .vwrap .vheader .vinput {
-  border-bottom: 1px solid #f0f0f0;
+#waline .v[data-class=v] * {
+  box-sizing: border-box;
 }
 
-#waline .vwrap {
-  border-radius: 0px !important;
-  border-right: none !important;
-  border-left: none !important;
+#waline .vcards {
+  padding: 10px;
+}
+
+#waline .vcards .vcard svg:hover {
+  fill: #fc4041;
+}
+
+#waline .vbtn:hover {
+  border-color: #fc4041 !important;
+  color: #fc4041 !important;
+  transition-duration: .2s !important;
+}
+
+#waline .veditor {
+  padding: 10px;
+  border-radius: 0;
+  width: calc(100% - 1.5em);
+}
+
+#waline .veditor:focus {
+  background-color: transparent !important;
+}
+
+#waline .vitem input:focus {
+  background-color: transparent !important;
 }
 
 #waline .vpower {
-  margin-right: 10px;
+  margin: 0 10px !important;
 }
 
 #waline .vpower a {
   color: #fc4041;
 }
 
-#waline .vcount {
-  margin-left: 10px;
-}
-
-#waline .vcard {
+#waline .vcomment {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
   padding: 10px;
 }
 
-#waline .vcard .vnick {
-  color: #2d2d2d;
-  font-weight: 700;
+#waline .vcomment .vpanel {
+  border-radius: unset;
+  border: 0px;
 }
 
-#waline .vcontent {
-  font-size: 16px;
-}
-
-#waline .vat {
-  float: unset !important;
+#waline .vcomment .vpanel .vheader {
+  border-bottom: 1px solid #eee;
 }
 
 .archive .content-wrap {
@@ -946,7 +960,7 @@ ul, ol {
 }
 
 .archive .left-wrap a:hover {
-  border-bottom: 1px solid #2d2d2d;
+  border-bottom: 1px solid #333;
 }
 
 .archive .right-wrap {
@@ -998,7 +1012,7 @@ ul, ol {
 }
 
 .archive .right-wrap .tag a:hover {
-  background-color: #2d2d2d;
+  background-color: #333;
   color: #f3f3f3;
   border-radius: 2px;
 }
@@ -1044,7 +1058,7 @@ ul, ol {
   height: 30px;
   line-height: 30px;
   text-align: center;
-  color: #2d2d2d;
+  color: #333;
   border-radius: 4px;
 }
 
@@ -1129,7 +1143,7 @@ ul, ol {
 }
 
 .terms .tag a:hover {
-  background-color: #2d2d2d;
+  background-color: #333;
   color: #f3f3f3;
   border-radius: 2px;
 }
