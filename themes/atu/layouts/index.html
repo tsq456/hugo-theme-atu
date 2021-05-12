@@ -1,9 +1,9 @@
 {{ define "main" }}
-    {{ $paginator := .Paginate (.Site.RegularPages) }}
+    {{ $paginator := .Paginate (where .Site.RegularPages "Params.date" "!=" nil) }}
 
 <div class="homepage wrap">
     {{- partial "navigation.html" . -}}
-    {{ range where .Site.RegularPages "Params.date" "!=" nil }}
+    {{ range $paginator.Pages }}
         <article class="homepage-posts">
             <h1 class="post-title">
                 <a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a>

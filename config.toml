@@ -4,7 +4,7 @@ title = "阿凸日记"
 theme = "atu"
 
 # 每页显示文章数量
-paginate = 8
+paginate = 5
 
 hasCJKLanguage = true
 googleAnalytics = "UA-59524632-1"
