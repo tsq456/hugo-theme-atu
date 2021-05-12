@@ -1,5 +1,33 @@
 <footer id="footer">
   {{ if .IsPage }}
+  <script>
+    myID = document.getElementById("toc");
+
+    var myScrollFunc = function() {
+      var y = window.scrollY;
+      if (y >= 400) {
+        myID.classList.add("show")
+        myID.classList.remove("hidden")
+      } else {
+        myID.classList.add("hidden")
+        myID.classList.remove("show")
+      }
+    };
+    window.addEventListener("scroll", myScrollFunc);
+  </script>
+  <script>
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '#toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: '.content',
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: 'h1, h2, h3',
+      // For headings inside relative or absolute positioned containers within content.
+      hasInnerContainers: true,
+      scrollSmooth: true,
+    });
+  </script>
   {{/*  mediumZoom  */}}
   <script src="{{ "/js/medium-zoom.min.js" | relURL }}"></script>
   <script>

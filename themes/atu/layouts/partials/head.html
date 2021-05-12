@@ -13,6 +13,7 @@
 
 {{ if .IsPage }}
 <script src="{{ "/js/lazyload.min.js" | relURL }}"></script>
+<script src="{{ "/js/tocbot.min.js" | relURL }}"></script>
 {{ end }}
 
 <link href="https://fonts.font.im/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
@@ -34,3 +35,4 @@
     <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
   {{ end }}
 {{ end }}
+
