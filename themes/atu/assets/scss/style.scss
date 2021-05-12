@@ -517,6 +517,12 @@ ul, ol {
     position: relative;
     top: 1rem;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    &>a svg {
+        transform: scale(.5);
+        transform-origin: left top;
+        margin-right: -9%;
+        margin-bottom: -6%;
+    }
     span,span a {
         color: rgb(245, 245, 245) !important;
         font-size: pxTorem(14px);

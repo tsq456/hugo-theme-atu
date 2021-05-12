@@ -524,6 +524,13 @@ ul, ol {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
+.singlepage .topinfo > a svg {
+  transform: scale(0.5);
+  transform-origin: left top;
+  margin-right: -9%;
+  margin-bottom: -6%;
+}
+
 .singlepage .topinfo span, .singlepage .topinfo span a {
   color: whitesmoke !important;
   font-size: 0.875rem;

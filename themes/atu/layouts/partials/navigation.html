@@ -1,7 +1,7 @@
 {{if not .IsPage}}
 <div id="navigation">
     <a href="{{.Site.BaseURL}}" class="sitelogo">
-        <img src="/images/sitelogo.png" alt="sitelogo">
+        {{ partial "sitelogo.html" . }}
     </a>
     <ul class="menu-list">
         <li>
