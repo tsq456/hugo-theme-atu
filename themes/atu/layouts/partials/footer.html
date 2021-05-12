@@ -1,85 +1,11 @@
 <footer id="footer">
   {{ if .IsPage }}
-  <script>
-    myID = document.getElementById("toc");
+    <script src="{{ "/js/lazyload.min.js" | relURL }}"></script>
+    <script src="{{ "/js/tocbot.min.js" | relURL }}"></script>
+    <script src="{{ "/js/medium-zoom.min.js" | relURL }}"></script>
 
-    var myScrollFunc = function() {
-      var y = window.scrollY;
-      if (y >= 400) {
-        myID.classList.add("show")
-        myID.classList.remove("hidden")
-      } else {
-        myID.classList.add("hidden")
-        myID.classList.remove("show")
-      }
-    };
-    window.addEventListener("scroll", myScrollFunc);
-  </script>
-  <script>
-    tocbot.init({
-      // Where to render the table of contents.
-      tocSelector: '#toc',
-      // Where to grab the headings to build the table of contents.
-      contentSelector: '.content',
-      // Which headings to grab inside of the contentSelector element.
-      headingSelector: 'h1, h2, h3',
-      // For headings inside relative or absolute positioned containers within content.
-      hasInnerContainers: true,
-      scrollSmooth: true,
-    });
-  </script>
-  {{/*  mediumZoom  */}}
-  <script src="{{ "/js/medium-zoom.min.js" | relURL }}"></script>
-  <script>
-    mediumZoom('.zoom', {
-        margin:20,
-        background:'#fff',
-    })
-  </script>
-  {{/*  lazyload  */}}
-  <script>
-    (function () {
-      function logElementEvent(eventName, element) {
-        console.log(Date.now(), eventName, element.getAttribute("data-src"));
-      }
-
-      var callback_enter = function (element) {
-        logElementEvent("🔑 ENTERED", element);
-      };
-      var callback_exit = function (element) {
-        logElementEvent("🚪 EXITED", element);
-      };
-      var callback_loading = function (element) {
-        logElementEvent("⌚ LOADING", element);
-      };
-      var callback_loaded = function (element) {
-        logElementEvent("👍 LOADED", element);
-      };
-      var callback_error = function (element) {
-        logElementEvent("💀 ERROR", element);
-        element.src =
-          "https://via.placeholder.com/440x560/?text=IMAGE+LOAD+FAIL#center";
-      };
-      var callback_finish = function () {
-        logElementEvent("✔️ FINISHED", document.documentElement);
-      };
-      var callback_cancel = function (element) {
-        logElementEvent("🔥 CANCEL", element);
-      };
-
-      var ll = new LazyLoad({
-        threshold: 0,
-        // Assign the callbacks defined above
-        callback_enter: callback_enter,
-        callback_exit: callback_exit,
-        callback_cancel: callback_cancel,
-        callback_loading: callback_loading,
-        callback_loaded: callback_loaded,
-        callback_error: callback_error,
-        callback_finish: callback_finish
-      });
-    })();
-  </script>
+    {{ $mainJS := resources.Get "js/main.js" | resources.Minify }}
+    <script src="{{ $mainJS.Permalink }}"></script>
   {{ end }}
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 

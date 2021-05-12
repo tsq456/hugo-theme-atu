@@ -11,11 +11,6 @@
 {{ $styles:= resources.Get "/scss/style.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint "sha512" }}
 <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
 
-{{ if .IsPage }}
-<script src="{{ "/js/lazyload.min.js" | relURL }}"></script>
-<script src="{{ "/js/tocbot.min.js" | relURL }}"></script>
-{{ end }}
-
 <link href="https://fonts.font.im/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
 
 <link rel="stylesheet" href="{{ "/css/fonts.min.css" | relURL }}">
