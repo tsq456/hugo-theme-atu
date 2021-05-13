@@ -10,6 +10,11 @@ hasCJKLanguage = true
 googleAnalytics = "UA-59524632-1"
 summaryLength = 400
 OpenGraph = true
+enableRobotsTXT = true
+
+[sitemap]
+  ChangeFreq = "weekly"
+  Priority = "0.5"
 
 [Params]
 enableComment = true
