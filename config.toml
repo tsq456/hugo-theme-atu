@@ -43,6 +43,7 @@ description = "阿凸的个人博客，主要记录个人生活及工作感悟�
   noClasses = true
   style = "manni"
   tabWidth = 4
+  
 
 [[menu.main]]
 name = "文章归档"
