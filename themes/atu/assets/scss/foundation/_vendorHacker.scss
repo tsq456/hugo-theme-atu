@@ -1,0 +1,44 @@
+#waline {
+    .v[data-class=v] * {
+        box-sizing: border-box;
+    }
+
+    .vcards {
+        padding: 10px;
+        .vcard svg:hover {
+            fill: $accent-color;
+        }
+    }
+    .vbtn:hover {
+        border-color: $accent-color !important;
+        color: $accent-color !important;
+        transition-duration: .2s !important
+    }
+    .veditor {
+        padding: 10px;
+        border-radius: 0;
+        width: calc(100% - 1.5em);
+        &:focus {
+            background-color: transparent !important;
+        }
+    }
+    .vitem input:focus {
+        background-color: transparent !important;
+    }
+    .vpower {
+        margin: 0 10px !important;
+        a {color: $accent-color;}
+    }
+    .vcomment {
+        border-top: 1px solid $divider-color;
+        border-bottom: 1px solid $divider-color;
+        padding: 10px;
+        .vpanel {
+            border-radius: unset;
+            border: 0px;
+            .vheader {
+                border-bottom: 1px solid $divider-color;            
+            }
+        }
+    }
+}

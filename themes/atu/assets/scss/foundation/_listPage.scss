@@ -1,0 +1,167 @@
+.archive {
+    .content-wrap {
+        display:flex;
+        justify-content: space-between;
+        padding: 2rem;
+        @media screen and (max-width:640px) {
+            box-shadow: unset;
+        }
+    }
+    .left-wrap {
+        @media screen and (max-width:800px) {
+            width: 100%;
+            margin-right: 0;
+        }
+        width: 60%;
+        margin-right: pxTorem(60px);
+        .posts {
+            margin: 1rem 0;
+            &:first-child {
+                margin-top: 0;
+            }
+            .post-title {
+                max-width: 80%;
+                text-overflow: ellipsis;
+            }
+            .post-date {
+                float: right;
+                @media screen and (max-width:450px) {
+                    float: unset;
+                    display: block;
+                    color: $last-font-color;
+                }
+            }
+        }
+        a {
+            overflow: hidden;
+        }
+        a:hover {
+            border-bottom: 1px solid $default-font-color;
+        }
+
+    }
+    .right-wrap {
+        width: 35%;
+        @media screen and (max-width:800px) {
+            display: none;
+        }
+        p {
+            border-bottom: 1px solid $thead-bg-color;
+            height: pxTorem(36px);
+            font-weight: 700;
+        }
+        .cate {
+            a {
+                display: block;
+                margin-top: pxTorem(20px);
+                height: 40px;
+                span {
+                    margin-left: 5px;
+                    color: $last-font-color;
+                }
+            }
+            img {
+                margin-right: 1rem;
+                vertical-align: middle;
+            }
+        }
+        .tag {
+            p {
+            margin-top: 3rem;
+            }
+            a {
+                display: inline-block;
+                margin-top: pxTorem(16px); 
+                margin-right: pxTorem(20px);
+                padding: 4px;
+                span {
+                    margin-left: 5px;
+                    color: $last-font-color;
+                }
+                &:hover {
+                    span {color: $quota-bg-color;}
+                    background-color: $default-font-color;
+                    color: $quota-bg-color;
+                    border-radius: 2px;
+                }
+            }
+        }
+    }
+}
+
+.terms {
+    padding-bottom: 3rem;
+    p {
+        color: $sencondary-font-color;
+        font-size: pxTorem(18px);
+        font-weight: 700;
+        line-height: 3rem;
+        border-bottom: 1px solid $thead-bg-color;
+        margin-bottom: 1rem;
+    }
+    .cate, .tag {
+        padding: 1rem 8rem;
+        margin-top: 3rem;
+        @media screen and (max-width:640px) {
+            padding: 1rem 2rem;
+        }
+    }
+    .cate {
+        a {
+            @media screen and (max-width:640px) {
+                display: block;
+            }
+            margin-top: pxTorem(20px);
+            margin-right: 2rem;
+            line-height: 40px;
+            span {
+                margin-left: 5px;
+                color: $last-font-color;
+            }
+        }
+        img {
+            margin-right: 1rem;
+            vertical-align: middle;
+        }
+    }
+    .tag {
+        a {
+            @media screen and (max-width:640px) {
+                display: block;
+            } 
+            margin-right: pxTorem(20px);
+            padding: 4px;
+            span {
+                margin-left: 5px;
+                color: $last-font-color;
+            }
+            &:hover {
+                span {color: $quota-bg-color;}
+                background-color: $default-font-color;
+                color: $quota-bg-color;
+                border-radius: 2px;
+            }
+        }
+    }
+}
+.taxo {
+    .content-wrap {
+        padding: 3rem 10rem;
+        @media screen and (max-width:640px) {
+            padding: 3rem 2rem;
+        }
+    }
+    .post {
+        display: flex;
+        justify-content: space-between;
+        span {
+            margin-bottom: 2rem;
+        }
+    }
+    .taxo-name {
+        font-size: 2rem;
+        font-style: italic;
+        font-weight: 700;
+        margin-bottom: 3rem;
+    }
+}

@@ -1,0 +1,66 @@
+.toc.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s ease-out all;
+}
+
+.toc.show {
+    visibility: visible;
+    opacity: 1;
+    transition: .2s ease-in all;
+}
+
+.toc {
+    overflow-y: auto;
+    position: fixed;
+    top: 30px;
+    left: calc((100vw - 920px) / 2 + 930px);
+    &>.toc-list {
+        overflow: hidden;
+        position: relative
+    }
+    .toc-list {
+        margin: 0;
+        padding-left: 10px
+    }
+    a.toc-link {
+        color: currentColor;
+        height: 100%;
+        font-size: 12px;
+    }
+    .is-collapsible {
+        max-height: 1000px;
+        overflow: hidden;
+        transition: all 300ms ease-in-out
+    }
+    
+    .is-collapsed {
+        max-height: 0
+    }
+    
+    .is-position-fixed {
+        position: fixed !important;
+        top: 0
+    }
+    
+    .is-active-link {
+        font-weight: 700
+    }
+    
+    .toc-link::before {
+        background-color: $thead-bg-color;
+        content: ' ';
+        display: inline-block;
+        height: inherit;
+        left: 0;
+        margin-top: -1px;
+        position: absolute;
+        width: 2px
+    }
+    .is-active-link::before {
+        background-color: $accent-color
+    }
+    @media screen and (max-width:1300px) {
+        display: none;
+    }
+}

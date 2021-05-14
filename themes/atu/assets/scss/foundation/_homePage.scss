@@ -1,0 +1,126 @@
+.homepage {
+    .homepage-posts {
+        margin:auto;
+        margin-top: pxTorem(56px);
+        margin-bottom: pxTorem(30px);
+        width: $content-width;
+        .post-title {
+            text-align: center;
+            margin-top: pxTorem(56px);
+            margin-bottom: pxTorem(12px);
+            a:hover {
+                border-bottom: 1px solid $default-font-color;
+            }
+        }
+        .post-date {
+            margin-bottom: 26px;
+            text-align: center;
+            font-size: 14px;
+            color: $last-font-color;
+        }
+        img {
+            display: block;
+            border-radius: 4px;
+            width: 90%;
+            height: auto;
+            margin: 0 auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+            margin-bottom: 30px;
+            transition: ease-out .3s all;
+        }
+        .linked-img:hover {
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+            transform: translateY(-10px);
+            transition: ease-out .3s all;
+        }
+        .post-summary {
+            p {
+                text-indent: 2em;
+                color: $default-font-color;
+                line-height: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            h2 {
+                margin: 3rem auto 2rem;
+                padding-left: 1rem;
+                border-left: 4px solid $default-font-color;
+            }
+        }
+        .post-meta {
+            margin-top: pxTorem(50px);
+            font-size: pxTorem(14px);
+            color: $last-font-color;
+            @media screen and (max-width:640px) {
+                margin-top: pxTorem(20px);                       
+            }
+            .post-cate, .post-tags {
+                margin-right: pxTorem(18px);
+                @media screen and (max-width:640px) {
+                    display: none;                   
+                }
+            }
+            .post-tags a {
+                margin-right: 6px;
+            }
+            .post-tags a::before {
+                font-family: "Material Icons";
+                content: "\e9ef";
+                color: $sencondary-font-color;
+            }
+            .more {
+                position: relative;
+                margin-right: 0px;
+                float: right;
+                z-index: 1;
+                @media screen and (max-width:640px) {
+                    display: block;
+                    position: unset;
+                    float: unset; 
+                    a:before {
+                        display: none;
+                    }                   
+                }
+                a {
+                    margin-right: pxTorem(10px);
+                    z-index: 10;
+                }
+                svg {margin-left: pxTorem(10px);}  
+                a::before {
+                    position: absolute;
+                    content: "";
+                    top: pxTorem(-14px);
+                    left: pxTorem(50px);
+                    width: pxTorem(64px);
+                    height: pxTorem(64px);
+                    border-radius: 50%;
+                    background: #F2F2F2;
+                    transition: all .1s ease-in;
+                    z-index: -1;
+                }
+                a:hover {
+                    &::before {
+                        background: $accent-color;
+                        transition: all .1s ease-in;
+                    }
+                    & path {
+                        position: relative;
+                        fill: white;
+                        transition: all .1s ease-in;
+                        @media screen and (max-width:640px) {
+                            fill: #1b1b1b;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .post-divider {
+        margin-top: pxTorem(12px);
+        height: 1px;
+        background-color: $divider-color;
+        border: none;
+    }
+    &:last-child .post-divider {
+        border: 0px;
+    }
+}

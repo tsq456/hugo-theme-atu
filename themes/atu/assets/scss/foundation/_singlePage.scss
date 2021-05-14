@@ -1,0 +1,346 @@
+.singlepage {
+    .head-wrapper {
+        position: relative;
+        width: 100%;
+        height: pxTorem(400px);
+        z-index: 0;
+        .sitename {
+            position: absolute;
+            color: $default-font-color;
+            font-size: 2rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+            right: 2rem;
+            top: 2rem;
+            line-height: 3rem;
+        }
+    }
+    .head-wrapper .post-title {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        padding-top: 76px;
+        padding-bottom: 40px;
+        text-align: center;
+        background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+        a {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: $quota-bg-color;
+        }
+    }
+    .head-wrapper .post-title h1 {
+        color: white;
+        padding: 0 1rem;
+        font-size: pxTorem(36px);
+        margin-bottom: pxTorem(20px);
+        @media screen and (max-width:800px){
+            font-size: pxTorem(24px);
+        }
+    }
+
+    .head-wrapper .post-title .post-meta {
+        color: #D7D7D7;
+        font-size: pxTorem(14px);
+    }
+    .content {
+        padding: 0 4rem;
+        margin: auto;
+        margin-top: 36px;
+        @media screen and (max-width:640px) {
+            padding: 0 1rem;
+        }
+    }
+    .post-end-info {
+        max-width: 100%;
+        margin: 0 4rem;
+        margin-top: 3rem;
+        position: relative;
+        @media screen and (max-width:640px) {
+            margin-left: 1rem;
+        }
+        .post-end {
+            font-family: $last-font;
+            font-size: 2rem;
+            color: $divider-color;
+            font-weight: 700;
+            position: relative;
+            -webkit-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+            &::after {
+                content: "";
+                width: 8rem;
+                height: 2px;
+                position: absolute;
+                background-color: $divider-color;
+                left: 2rem;
+                bottom: -.3rem;
+            }
+        }
+        .last-mod-time {
+            display: block;
+            margin-top: 1rem;
+            color: $sencondary-font-color;
+        }
+    }
+}
+.singlepage .topinfo {
+    padding: 0 1rem;
+    max-width: 100%;
+    z-index: 999;
+    position: relative;
+    top: 1rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    &>a svg {
+        transform: scale(.5);
+        transform-origin: left top;
+        margin-right: -9%;
+        margin-bottom: -6%;
+    }
+    span,span a {
+        color: rgb(245, 245, 245) !important;
+        font-size: pxTorem(14px);
+    }
+    .path a:hover,
+    .tags a:hover{
+        border-bottom: 1px solid rgb(245, 245, 245);
+    }
+    img, span {
+        vertical-align: middle;
+        display: inline-block;
+        height: 36px;
+    }
+    .tags {
+        float: right;
+        a::before {
+            font-family: "Material Icons";
+            content: "\e9ef";
+            color: rgb(245, 245, 245);
+        }
+    }
+}
+
+.singlepage .post-pagination {
+    width: 90%;
+    margin: 4rem auto 2rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: .875rem !important;
+    .nextwrap,
+    .prewrap {
+        width: 50%;
+        line-height: 2rem;
+        display: inherit;
+        transition: .2s ease-out all;
+        &.end {
+            color: $last-font-color;
+            cursor: not-allowed;
+        }
+    }
+    .prewrap {
+        float: left;
+        justify-content: flex-start;
+    }
+    .prewrap.active:hover {
+        transform: translateX(-1rem);
+        transition: .2s ease-out all;
+    }
+    .nextwrap {
+        float: right;
+        justify-content: flex-end;
+    }
+    .nextwrap.active:hover {
+        transform: translateX(1rem);
+        transition: .2s ease-out all;
+    }
+    span {
+        line-height: 2rem;
+    }
+    a {
+        line-height: 2rem;
+        white-space:nowrap;
+        overflow: hidden;
+        text-overflow:ellipsis;
+    }
+}
+
+// typo style
+.singlepage {
+    @include listfullstye();
+    .content {
+        h1,h2,h3,h4,h5,h6 {
+            position: relative;
+            color: $title-font-color;
+        }
+        h1 {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: "";
+                width: 6rem;
+                height: .3rem;
+                background-color: lighten($color: $default-font-color, $amount: 30%);
+                bottom: -.7rem;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 4px;
+                transition: ease-in all .3s;
+            }
+            &:hover::before {
+                background-color: $accent-color;
+                width: 10rem;
+                transition: ease-in all .3s;
+            }
+        }
+        h2 {
+            margin: 3rem auto 2rem;
+            padding-left: 1rem;
+            border-left: 4px solid $default-font-color;
+        }
+        h3,h4,h5,h6 {
+            margin: 2rem 0;
+        }
+        h2:hover:before {
+            content: "H2";
+            position: absolute;
+            left: -3rem;
+            font-size: .5rem;
+            color: $last-font-color;
+        }
+        h3:hover:before {
+            content: "H3";
+            position: absolute;
+            left: -3rem;
+            font-size: .5rem;
+            color: $last-font-color;
+        }
+        h4:hover:before {
+            content: "H4";
+            position: absolute;
+            left: -3rem;
+            font-size: .5rem;
+            color: $last-font-color;
+        }
+        h5:hover:before {
+            content: "H5";
+            position: absolute;
+            left: -3rem;
+            font-size: .5rem;
+            color: $last-font-color;
+        }
+        h6:hover:before {
+            content: "H6";
+            position: absolute;
+            left: -3rem;
+            font-size: .5rem;
+            color: $last-font-color;
+        }
+        p {
+            margin-bottom: pxTorem(16px);
+        }
+        a {
+            border-bottom: 1px dashed $accent-color;
+            color: $accent-color;
+            margin: 0 .2rem;
+            padding: 0 .15rem;
+            border-radius: 2px;
+            &:hover {
+                background-color: $accent-color;
+                color: $front-bg-color;
+                transition: ease-in .3s all;
+            }
+        }
+        img[src$='#center'] {
+            display: block;
+            margin: pxTorem(50px) auto;
+            max-width: 95%;
+            border: 1px solid #D7D7D7;
+            border-radius: 4px;
+          }
+        hr {
+            border: none;
+            border-bottom: 1px solid #999;
+            margin: 3rem auto;
+            height: 15px;
+        }
+        .footnotes {
+            height: auto;
+            color: #555;
+            cursor: pointer;
+            font-size: .75rem;
+            a {color: #555; border-bottom: 1px dashed #555; margin: 0 0;}
+            a:hover {
+                background-color: unset;
+                color: unset;
+            }
+            .footnote-ref {
+                margin-left: 4px;
+                padding: 0 pxTorem(4px);
+                border-radius: 2px;
+                color: $front-bg-color;
+                background-color: $default-font-color;
+            }
+            .footnote-backref {border-bottom: none;}
+        }
+
+        table {
+            margin: 1.5rem auto;
+            width: 100%;
+            th {
+                background-color: $thead-bg-color;
+                padding: .5rem 1rem;
+                border: 1px solid $tbody-bg-color
+            }
+            tbody {
+                background-color: $tbody-bg-color;
+            }
+            td {
+                border: 1px solid $thead-bg-color;
+                padding: 0.5rem 1rem;
+                color: var(--text-color);
+            }
+        }
+        pre {
+            margin: pxTorem(20px) auto pxTorem(40px);
+            overflow-x: auto;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        code {
+            font-family: $code-font;
+            word-wrap:break-word;
+            word-break:normal;
+        }
+        p code,
+        li code {
+            padding: 0 .2rem;
+            margin: 0 .2rem;
+            background-color: $last-font-color;
+            border-radius: 4px;
+            color: $front-bg-color;
+            font-weight: 400 !important;
+        }
+        figure {
+            margin: pxTorem(50px) auto;
+            img {
+                margin-bottom: 10px !important;
+            }
+            figcaption h4 {
+                margin-top: 0;
+                margin-bottom: 50px;
+                color: $last-font-color;
+                text-align: center;
+                font-size: 14px;
+                font-weight: normal;
+                &:hover::before {
+                    content: "";
+                }
+            }
+        }
+    }
+}
