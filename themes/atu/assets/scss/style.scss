@@ -90,6 +90,8 @@ $default-font-size: 16px;
 
 @import "/foundation/toc.scss";
 
+@import "/foundation/vendorHacker.scss";
+
 .wrap {
     width: $globle-wrap-width;
     max-width: 100%;
