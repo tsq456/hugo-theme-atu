@@ -1,11 +1,11 @@
 ---
 title: "【译】你的设计箴言是什么"
 date: 2021-05-18T19:37:39+08:00
-tags: []
-categories: []
+tags: [翻译, 设计感悟]
+categories: [翻译]
 draft: true
 description: ""
-cover_image: ""
+cover_image: "https://img.atutang.com/what-are-your-design-maxims/1_3z9lpDa18UNE-vmA4bxDsQ.jpeg!loss/format/webp"
 comment : true
 ---
 
@@ -22,7 +22,7 @@ comment : true
 [^1]:原文为 “must have good taste and know the nuances and interrelatedness between the subject matter being designed and a typeface and type system that is most applicable and expressive for the purpose at hand”，实在翻不出通顺的意思..
 [^2]:原文为 “do not get enough credit for the craft required to develop typefaces that allow a great design solution to be brought to life by a capable graphic designer”，再次被难住...哈哈哈哈
 
-存在永不过时的字体（[Garamond](https://en.wikipedia.org/wiki/Garamond#:~:text=Garamond is a group of,book printing and body text.)， [Helvetica](https://en.wikipedia.org/wiki/Helvetica)），流行的字体（还记得 [Brown](https://lineto.com/typefaces/brown)字体的风靡一时吗？）以及处于二者之间的那些字体。那些流行的和还没用烂的字体并不代表在未来就会一直流行或没被用烂。不断基于你的能力来有机的、具有创意的并且明晰的使用字体，并同时保持对新字体的热情和了解是很关键的。
+存在永不过时的字体（[Garamond](https://en.wikipedia.org/wiki/Garamond)， [Helvetica](https://en.wikipedia.org/wiki/Helvetica)），流行的字体（还记得 [Brown](https://lineto.com/typefaces/brown)字体的风靡一时吗？）以及处于二者之间的那些字体。那些流行的和还没用烂的字体并不代表在未来就会一直流行或没被用烂。不断基于你的能力来有机的、具有创意的并且明晰的使用字体，并同时保持对新字体的热情和了解是很关键的。
 
 在[近期John Mayer与Kerwin Frost的有趣访谈](https://www.youtube.com/watch?v=iWgyprxp1wk)中（跳到25:10），Mayer谈到免费字体是很扯淡的事，当你看到唱片封面或者网站上使用免费字体时就知道了。John还说到在一流的字体上的投入就是在对质量投资，当你使用一款垃圾的免费字体时，你的脑袋可能无法分辨但是你可以用心识别。我对于Mayer先生的音乐作品不是非常熟悉，但是我很乐于见到像John Mayer这样具有巨大影响力的流行乐手能够说出为什么在制作像音乐这样的文化作品时一流的字体很重要。就如John所说：“买字体就对了！”
 

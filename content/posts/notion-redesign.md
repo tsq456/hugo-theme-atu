@@ -187,7 +187,7 @@ Notion多样的模板对于用户组织管理他们的页面是一项很棒的�
 
 ### 导航（Navigation）
 
-{{< figure src="https://img.atutang.com/notion-redesign/21.gif!/format/webp/lossless/true#center" title="【当前】Notion网页版中的导航栏（展示的是如何收藏页面）" >}}
+{{< figure src="https://img.atutang.com/notion-redesign/21.gif#center" title="【当前】Notion网页版中的导航栏（展示的是如何收藏页面）" >}}
 
 我在研究中，非Notion用户最常抱怨问题是Notion的导航不直观。同时，也存在许多关于搜索功能不好用或难以找到自己想要的东西的反馈，因此我也优化了导航栏。
 
@@ -195,7 +195,7 @@ Notion多样的模板对于用户组织管理他们的页面是一项很棒的�
 
 我是从首页开始设计的，我在侧边添加了几个关键菜单。在用户进入首页的任意工作区前，在侧边导航栏中都不会显示该工作区中的页面。
 
-{{< figure src="https://img.atutang.com/notion-redesign/1_BWkx3nwQq0IOfL9oP2ph5A.gif!/format/webp/lossless/true#center" title="【解决方案3-2】工作区菜单的展示方式" >}}
+{{< figure src="https://img.atutang.com/notion-redesign/1_BWkx3nwQq0IOfL9oP2ph5A.gif#center" title="【解决方案3-2】工作区菜单的展示方式" >}}
 
 我通过5个更直观的图标来优化顶部导航栏，这样用户就不再需要去寻找菜单了。我在当前侧边栏的搜索之外新增了一个帮助用户搜索当前页面内容的搜索。
 
@@ -203,13 +203,13 @@ Notion多样的模板对于用户组织管理他们的页面是一项很棒的�
 
 同时，我在弹窗内也增加了在Notion（全屏）页面内才显示的箭头导航。由于当前产品在弹窗页面内并未显示关闭按钮和箭头，我注意到一些用户很难在前后页面之间切换。他们没有意识到可以点击面包屑导航并且想知道如何返回上个页面。因此我决定添加箭头来帮助用户更好的浏览页面。
 
-{{< figure src="https://img.atutang.com/notion-redesign/24.gif!/format/webp/lossless/true#center" title="【解决方案3-2】带有顶部导航的页面弹窗" >}}
+{{< figure src="https://img.atutang.com/notion-redesign/24.gif#center" title="【解决方案3-2】带有顶部导航的页面弹窗" >}}
 
 ### 我的日历（My Calendar）
 
 我的日历让用户能够总览整个工作区内的待办事务。追踪分散的日历是很不友好的，用户希望能更直观的看到所有的任务代办。
 
-{{< figure src="https://img.atutang.com/notion-redesign/25.gif!/format/webp/lossless/true#center" title="【解决方案3-3】我的日历" >}}
+{{< figure src="https://img.atutang.com/notion-redesign/25.gif#center" title="【解决方案3-3】我的日历" >}}
 
 当用户在时间表内被安排任务时，这个任务会自动显示在我的日历中，我认为这将帮助用户在一个页面内处理各类事务。同时，这也能让用户更轻松的在很多页面中精准的进行日常安排。
 
