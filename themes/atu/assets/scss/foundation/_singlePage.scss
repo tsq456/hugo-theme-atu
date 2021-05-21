@@ -291,11 +291,33 @@
             border: 1px solid #D7D7D7;
             border-radius: 4px;
           }
-        hr {
+        &>hr {
             border: none;
-            border-bottom: 1px solid #999;
+            position: relative;
             margin: 3rem auto;
-            height: 15px;
+            width: 8px;
+            height: 8px;
+            background-color: $last-font-color;
+            overflow: visible;
+            &::before {
+                content: "";
+                position: absolute;
+                right: 30px;
+                width: 0;
+                height: 0;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-bottom: 8px solid $last-font-color;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                left: 30px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: $last-font-color;
+            }
         }
         sup {
             a {
@@ -308,7 +330,14 @@
         .footnotes {
             font-size: .75rem;
             hr {
-                margin-bottom: 16px;
+                border: none;
+                border-bottom: 2px solid rgb(218, 218, 218);
+                margin: 20px;
+                margin-bottom: 10px;
+                height: 15px;
+            }
+            ol {
+                margin-top: 10px;
             }
             li p {
                 line-height: 1.1rem;
