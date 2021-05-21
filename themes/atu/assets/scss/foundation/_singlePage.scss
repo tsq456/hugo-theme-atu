@@ -92,7 +92,6 @@
     z-index: 999;
     position: relative;
     top: 1rem;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     &>a svg {
         transform: scale(.5);
         transform-origin: left top;
@@ -103,8 +102,7 @@
         color: rgb(245, 245, 245) !important;
         font-size: pxTorem(14px);
     }
-    .path a:hover,
-    .tags a:hover{
+    .path a:hover {
         border-bottom: 1px solid rgb(245, 245, 245);
     }
     img, span {
@@ -113,7 +111,38 @@
         height: 36px;
     }
     .tags {
-        float: right;
+        text-align: right;
+        position: absolute;
+        right: -6px;
+        @media screen and (max-width:950px) {
+            right: 0;
+            a::after {
+                content: unset !important;
+            }
+        }
+        div {
+            margin-bottom: 4px;
+        }
+        a {
+            position: relative;
+            background-color: $accent-color;
+            padding: 2px 4px;
+            line-height: 20px;
+            &:hover {
+                padding-left: 12px;
+                transition: ease-out all .3s;
+            }
+        }
+        a::after {
+            content: "";
+            position: absolute;
+            right: 0px;
+            bottom: -6px;
+            width: 0;
+            height: 0;
+            border-top: 6px solid rgb(116, 0, 0);
+            border-right: 6px solid transparent;
+        }
         a::before {
             font-family: "Material Icons";
             content: "\e9ef";
