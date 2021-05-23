@@ -1,14 +1,17 @@
 ---
 title: "【译】你的设计箴言是什么"
-date: 2021-05-18T19:37:39+08:00
-tags: [翻译, 设计感悟]
-categories: [翻译]
-draft: false
-description: ""
-cover_image: "https://img.atutang.com/what-are-your-design-maxims/1_3z9lpDa18UNE-vmA4bxDsQ.jpeg!loss/format/webp"
-comment : true
+date: 2021-05-18T19:37:39.000+08:00
+tags:
+- 翻译
+- 设计感悟
+categories:
+- 翻译
+description: ''
+cover_image: https://img.atutang.com/what-are-your-design-maxims/1_3z9lpDa18UNE-vmA4bxDsQ.jpeg!loss/format/webp
+comment: true
+
 ---
-正儿八经翻译的第二篇文章，文章没“选对”，作者洋洋洒洒写了老长一篇，导致从选定文章到翻译校对完花了两周多的时间。并且不知道是自己英文太烂还是英文写作本就如此，在文章中经常会出现与上下文情景看去没有太大关联的句子，再加上作者的断句确实有点离谱，导致整个过程异常痛苦，好在是最后坚持下来了。
+test正儿八经翻译的第二篇文章，文章没“选对”，作者洋洋洒洒写了老长一篇，导致从选定文章到翻译校对完花了两周多的时间。并且不知道是自己英文太烂还是英文写作本就如此，在文章中经常会出现与上下文情景看去没有太大关联的句子，再加上作者的断句确实有点离谱，导致整个过程异常痛苦，好在是最后坚持下来了。
 
 坚持下来的其中很大一个原因在于确实很多点自己确实很有感触。作者主要从版式、审美、管理、表达、协作、设计背景、学习、试错、努力以及本心这么多个方面阐述了自己的看法。虽然作者应该是平面设计领域的设计师，但是设计本质上是共通的，所以很多点也是自己“这么多年”来深有感触的，有的在不断践行，有的一直也做不好。
 <!--more-->
@@ -23,7 +26,7 @@ comment : true
 
 废话不多说，以下都是正文，不保证翻译的全对，甚至可能错误的地方更多。
 
----
+***
 
 > 本文翻译自Medium的[《What are your design maxims?》](https://uxdesign.cc/my-design-maxims-25393fde8a1)，作者[Matt Owens](https://matthew-owens.medium.com/)。未经原作者许可，也不做任何商业用途。
 
@@ -35,10 +38,10 @@ comment : true
 
 在平面设计准则中，优秀排版的价值是不能被低估的。样式能够成就一切也能破坏一切，通晓如何有效运用排版可以将优秀设计和伟大设计区分开。在排版中，设计师们需要擅长两件事：字体的选择以及字体在设计中的作用。好的字体选择需要设计师知道什么是优秀的字体，以及在哪能找到优秀的字体。
 
-一位当代的平面设计师需要深入的了解样式，就如同唱片收藏家一般，需要具备良好品味并知道所设计的主题和最适用的字体和字体系统之间的细微差别和相互关系[^1]。诸如[Pangram Pangram](https://pangrampangram.com/)、 [Blaze](https://blazetype.eu/)、[Displaay](https://displaay.net/)、[General Type Studio](https://www.generaltypestudio.com/)、[Florian Karsten](https://fonts.floriankarsten.com/)、[Edition.studio](https://edition.studio/)这样一流的当代字体设计公司只是少数，（多数）公司没有足够的能力开发出能够使出色的图形设计师将优秀设计解决方案付诸实践的字体的工艺[^2]。没有伟大的字体设计师就不会有伟大的平面设计师。
+一位当代的平面设计师需要深入的了解样式，就如同唱片收藏家一般，需要具备良好品味并知道所设计的主题和最适用的字体和字体系统之间的细微差别和相互关系\[^1\]。诸如[Pangram Pangram](https://pangrampangram.com/)、 [Blaze](https://blazetype.eu/)、[Displaay](https://displaay.net/)、[General Type Studio](https://www.generaltypestudio.com/)、[Florian Karsten](https://fonts.floriankarsten.com/)、[Edition.studio](https://edition.studio/)这样一流的当代字体设计公司只是少数，（多数）公司没有足够的能力开发出能够使出色的图形设计师将优秀设计解决方案付诸实践的字体的工艺\[^2\]。没有伟大的字体设计师就不会有伟大的平面设计师。
 
-[^1]:原文为 “must have good taste and know the nuances and interrelatedness between the subject matter being designed and a typeface and type system that is most applicable and expressive for the purpose at hand”，实在翻不出通顺的意思..
-[^2]:原文为 “do not get enough credit for the craft required to develop typefaces that allow a great design solution to be brought to life by a capable graphic designer”，再次被难住...哈哈哈哈
+\[^1\]:原文为 “must have good taste and know the nuances and interrelatedness between the subject matter being designed and a typeface and type system that is most applicable and expressive for the purpose at hand”，实在翻不出通顺的意思..
+\[^2\]:原文为 “do not get enough credit for the craft required to develop typefaces that allow a great design solution to be brought to life by a capable graphic designer”，再次被难住...哈哈哈哈
 
 存在永不过时的字体（[Garamond](https://en.wikipedia.org/wiki/Garamond)， [Helvetica](https://en.wikipedia.org/wiki/Helvetica)），流行的字体（还记得 [Brown](https://lineto.com/typefaces/brown)字体的风靡一时吗？）以及处于二者之间的那些字体。那些流行的和还没用烂的字体并不代表在未来就会一直流行或没被用烂。不断基于你的能力来有机的、具有创意的并且明晰的使用字体，并同时保持对新字体的热情和了解是很关键的。
 
@@ -46,9 +49,9 @@ comment : true
 
 ## 高雅的品位难以教授且更难精通
 
-每个设计师都有自己的审美并会影响到他们的设计。你的品味是你的经历以及你的灵感和影响的深度和广度的产物[^3]。一个人的审美并不总是与每个项目契合，因此挑战在于，借助你的个人审美的同时，也理解对你在做的项目而言什么是好的审美。个人的审美难以教授：它来自于你看待这个世界的方法。
+每个设计师都有自己的审美并会影响到他们的设计。你的品味是你的经历以及你的灵感和影响的深度和广度的产物\[^3\]。一个人的审美并不总是与每个项目契合，因此挑战在于，借助你的个人审美的同时，也理解对你在做的项目而言什么是好的审美。个人的审美难以教授：它来自于你看待这个世界的方法。
 
-[^3]:原文为 “Your taste is the product of your experiences as well as the depth and breadth of your inspirations and influences”
+\[^3\]:原文为 “Your taste is the product of your experiences as well as the depth and breadth of your inspirations and influences”
 
 在设计专业的背景下的所谓优秀审美，是一个人将美感与复杂性带入设计方法且同时满足客户需求，并最终以一种当代的令人惊叹的方式引起共鸣的能力。你在这么做的同时也要将你的审美作为一道过滤器。在你喜欢的设计、当下世界所流行的设计以及适合用户的设计之间不断徘徊，这对于每个设计师而言都是独一无二的。这个复杂问题的答案就在于通过你的好奇心和意愿所获得的优秀审美。
 
@@ -60,9 +63,7 @@ comment : true
 
 当来到设计这个领域时，在我看来，当你想成为领导时脑海里会有些许不同，你从想要“创造”一些特别的事转变为了想要“解决”一些困难的事。创造是有趣的，当你在创造时不需要区分对错。我热爱创造事物，也热爱探索新想法，但是这与主导并解决问题是截然不同的。作为一个真正的项目负责人，你需要通过团队来找到正确的解决方案。你需要确认各类突发事件和临时问题。为什么这些很重要？因为进行一个盈利项目时，你必须做到这样一个程度：用户感到钱花的值当且团队感到他们尽自己最大的能力完成了工作。真正的领导会确保这个结果在项目各环节中都是排在首位的。
 
-我认为有些人比其他人更愿意当领导，我会将他们分为两类。一类是那种可以载入史册的，这类人对想法充满热情和追求，并且通常非常自我和怪异。有数不清的领导者，他们集天赋、远见和傲慢于一身。这些人通常被视作已超脱于生活。老实说。我不是很喜欢这类领导者，因为这将一个人放在了聚光灯下成为了唯一作者，而这完全是扯淡[^4]。成就伟大之事，需要远不止一人的远见，并且我认为相信一个人知晓全部答案是不公且有偏见的。这无视了其他所有人为项目成功所做出的辛勤付出。
-
-[^4]: 原文为BS，我猜是Bullshit的意思..
+我认为有些人比其他人更愿意当领导，我会将他们分为两类。一类是那种可以载入史册的，这类人对想法充满热情和追求，并且通常非常自我和怪异。有数不清的领导者，他们集天赋、远见和傲慢于一身。这些人通常被视作已超脱于生活。老实说。我不是很喜欢这类领导者，因为这将一个人放在了聚光灯下成为了唯一作者，而这完全是扯淡[^4](%E5%8E%9F%E6%96%87%E4%B8%BABS%EF%BC%8C%E6%88%91%E7%8C%9C%E6%98%AFBullshit%E7%9A%84%E6%84%8F%E6%80%9D..)。成就伟大之事，需要远不止一人的远见，并且我认为相信一个人知晓全部答案是不公且有偏见的。这无视了其他所有人为项目成功所做出的辛勤付出。
 
 另一类领导人是为工作及想法服务的，而非他们的野心。每个领导都想要解决问题，但伟大的领导者是那些从不倦于寻找答案的人。我曾有幸与一些极具创意的领导者共事过。我认识的杰出的创意领导者们能够熟练的将创作技巧与领导解决问题所需要的依赖关系平衡起来。他们即是创造者也是管理者，是创作者也是问题解决者，是领导者也是执行者。我真的很敬佩这种类型的领导者，因为他们与工作保持着密切的关系，并且知晓实现伟大之事所需付出的汗水与艰辛。如果对于了解设计师作为领导者的经历感兴趣，我推荐这篇[Podcast](https://podcasts.apple.com/us/podcast/frequencies-by-wgi-unity-without-uniformity-dylan-mulvaney/id1532557377?i=1000507075520)。
 
@@ -72,19 +73,19 @@ comment : true
 
 某人，例如一位客户，可能审美水平不如你，但是沉迷于一个你认为不如你的创意的想法。解决这个主观偏好的唯一办法是通过书面和口头的推案。你需要具有向客户展示他们的主观偏好将如何对项目的产出造成负面影响的能力。如果你没有这样做，那么这只是一场关乎个人审美的主观讨论，然后你们将各自保留意见并陷入僵局。
 
-这真的是一项必须理解的重要之事，你必须能够说服那些非视觉专业的客户欣赏并理解你的创意作品的内涵[^5]，这样他们能够看到你在作品中的想法。你必须向他们展示光明的前景，你不仅需要说服他们（相信）你的想法更好，同时也需要解释你的想法是如何与商业目标和底线紧密联系的。作为一名平面设计师，您必须能够在会议上以口头形式进行操作，以简报形式进行演示，以电子邮件形式进行详细介绍。我发现这是确保你的想法不被主观偏好（影响），而被认作客观且优秀的解决方案唯一方式。
+这真的是一项必须理解的重要之事，你必须能够说服那些非视觉专业的客户欣赏并理解你的创意作品的内涵\[^5\]，这样他们能够看到你在作品中的想法。你必须向他们展示光明的前景，你不仅需要说服他们（相信）你的想法更好，同时也需要解释你的想法是如何与商业目标和底线紧密联系的。作为一名平面设计师，您必须能够在会议上以口头形式进行操作，以简报形式进行演示，以电子邮件形式进行详细介绍。我发现这是确保你的想法不被主观偏好（影响），而被认作客观且优秀的解决方案唯一方式。
 
-[^5]:原文为 “you have to be able to convince non-visual people to appreciate and understand the verbal rationalization of your creative work so that they can see your thinking in the work itself”，verbal rationalization语言合理化？..因此译作内涵。
+\[^5\]:原文为 “you have to be able to convince non-visual people to appreciate and understand the verbal rationalization of your creative work so that they can see your thinking in the work itself”，verbal rationalization语言合理化？..因此译作内涵。
 
 ## 独立工作与协同合作是相互依赖的
 
-我曾投入数千小时在电脑前进行设计。不停的忙于输入、调整关键帧、渲染、创造你们所谓的不同版本的LOGO。我在完成这些工作时多数是孤身一人或者戴着耳机来屏蔽外界。这项艰苦的工作是只有孤独才能负担得起的事情[^6]，这对于提升我的技艺是不可或缺的。
+我曾投入数千小时在电脑前进行设计。不停的忙于输入、调整关键帧、渲染、创造你们所谓的不同版本的LOGO。我在完成这些工作时多数是孤身一人或者戴着耳机来屏蔽外界。这项艰苦的工作是只有孤独才能负担得起的事情\[^6\]，这对于提升我的技艺是不可或缺的。
 
-[^6]:原文为 “This deep work was something that only solitude could afford me”
+\[^6\]:原文为 “This deep work was something that only solitude could afford me”
 
-这些年来，我发现独立工作只在一定程度上是有益的。如果你没有其他人可以分享你的想法，你可能会陷入纠结，变成《现代启示录》(Apocalypse Now)中的库尔茨上校(Colonel Kurtz)[^7]的创意版本。合作意味着共同工作，也意味着共同努力。作为设计师，我们从未真正的“一起工作”，更多的是为一个共同目标而一起努力。我们在彼此独立的环境中相互支持以实现想法，并且我们在努力创造美好事物的过程中相互寻求慰藉以及指引。
+这些年来，我发现独立工作只在一定程度上是有益的。如果你没有其他人可以分享你的想法，你可能会陷入纠结，变成《现代启示录》(Apocalypse Now)中的库尔茨上校(Colonel Kurtz)\[^7\]的创意版本。合作意味着共同工作，也意味着共同努力。作为设计师，我们从未真正的“一起工作”，更多的是为一个共同目标而一起努力。我们在彼此独立的环境中相互支持以实现想法，并且我们在努力创造美好事物的过程中相互寻求慰藉以及指引。
 
-[^7]:Colonel Kurtz是《现代启示录》中一名背叛美国的军官
+\[^7\]:Colonel Kurtz是《现代启示录》中一名背叛美国的军官
 
 许多年前我有一个创意合伙人，极其的有天赋，但是无论别人怎么说，他们都要按照他们的方式来做事。他们要（自己）选择一个方向，而我则必须让他们按照他们自己的方式和时间来寻找答案。我想要凡事都给予他们“答案”，但是他们总是想要自己找寻，即便那就是我所想给的答案。我曾认为这是让人沮丧的事，但是多年后我意识到即便我们本该一起工作，而我们也确实协同并肩努力过，但是在一旁作为支持者和鼓励者比直接提供答案有意义的多。
 
@@ -114,47 +115,43 @@ comment : true
 
 ## 不停学习和犯错
 
-学习新技能和天赋一样重要。我们永远都是学生（需要保持学习的心态）。设计的基本面是不变的，但是创意产业却总是在发展。随着文化，技术和社会的发展，设计师的工作也在不断发展。这有点像设计中的摩尔定律[^8]。我认为设计会与软件和商业保持步伐一致，并且每18个月就会有一次显著的发展。
-
-[^8]:摩尔定律是英特尔创始人之一戈登·摩尔的经验之谈，其核心内容为：集成电路上可以容纳的晶体管数目在大约每经过18个月便会增加一倍
+学习新技能和天赋一样重要。我们永远都是学生（需要保持学习的心态）。设计的基本面是不变的，但是创意产业却总是在发展。随着文化，技术和社会的发展，设计师的工作也在不断发展。这有点像设计中的摩尔定律[^8](%E6%91%A9%E5%B0%94%E5%AE%9A%E5%BE%8B%E6%98%AF%E8%8B%B1%E7%89%B9%E5%B0%94%E5%88%9B%E5%A7%8B%E4%BA%BA%E4%B9%8B%E4%B8%80%E6%88%88%E7%99%BB%C2%B7%E6%91%A9%E5%B0%94%E7%9A%84%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88%EF%BC%8C%E5%85%B6%E6%A0%B8%E5%BF%83%E5%86%85%E5%AE%B9%E4%B8%BA%EF%BC%9A%E9%9B%86%E6%88%90%E7%94%B5%E8%B7%AF%E4%B8%8A%E5%8F%AF%E4%BB%A5%E5%AE%B9%E7%BA%B3%E7%9A%84%E6%99%B6%E4%BD%93%E7%AE%A1%E6%95%B0%E7%9B%AE%E5%9C%A8%E5%A4%A7%E7%BA%A6%E6%AF%8F%E7%BB%8F%E8%BF%8718%E4%B8%AA%E6%9C%88%E4%BE%BF%E4%BC%9A%E5%A2%9E%E5%8A%A0%E4%B8%80%E5%80%8D)。我认为设计会与软件和商业保持步伐一致，并且每18个月就会有一次显著的发展。
 
 伴随着发展而来的是错误。你必须犯大量的错才能得到正确的东西。我不认为有任何的捷径。设计师至少有一半的工作在拥抱变化和犯错。你越快意识到这一点并接受它，就越能从工作中获得乐趣。你无法与发展对抗。你必须接受它并投入其中。相对于他人给我看原来看过的作品，我更愿意看到某人尝试了一个怪异的新想法然后失败了。我总是对他人给我展示的新软件或者是新趋势感到兴奋。我们越接近我们所认为的正确所在，他就离我们越远，这是保持事物新新奇且充满热情的原动力。
 
-> *The farther I go the less I know*
+> _The farther I go the less I know_
 >
-> *One foot goes in front of the other*
+> _One foot goes in front of the other_
 >
-> *It all boils down*
+> _It all boils down_
 >
-> *To not hang around*
+> _To not hang around_
 >
-> *To keep moving*
+> _To keep moving_
 >
-> *In front of the gravity, gravity, gravity, gravity*
+> _In front of the gravity, gravity, gravity, gravity_
 >
-> *The answer is there, the answer is there*
+> _The answer is there, the answer is there_
 >
-> *But there is not a fixed position*
+> _But there is not a fixed position_
 >
-> *It keeps moving along and I keep coming along*
+> _It keeps moving along and I keep coming along_
 >
-> *That’s why I’m a long distance runner, runner, runner, runner*
+> _That’s why I’m a long distance runner, runner, runner, runner_
 >
-> *And if I stop to catch my breath*
+> _And if I stop to catch my breath_
 >
-> *I might catch a piece of death*
+> _I might catch a piece of death_
 >
-> *I can’t keep your pace*
+> _I can’t keep your pace_
 >
-> *If I want to finish this race*
+> _If I want to finish this race_
 >
-> *My fight’s not with you*
+> _My fight’s not with you_
 >
-> *It’s with the gravity*
+> _It’s with the gravity_
 >
-> 
->
-> *-* [Fugazi](https://open.spotify.com/artist/62sC6lUEWRjbFqXpMmOk4G?si=G4T2iXJpRVW1ufhwx5F2Zw)*, Long distance runner*
+> _-_ [Fugazi](https://open.spotify.com/artist/62sC6lUEWRjbFqXpMmOk4G?si=G4T2iXJpRVW1ufhwx5F2Zw)_, Long distance runner_
 
 ## 努力就会有汇报
 
@@ -162,8 +159,8 @@ comment : true
 
 我喜欢Matt的故事，因为这完美地证明了那句老话：终将获得获得回报（hard work pays off #HWPO）。确实如此，就像一名运动员，成为一名资深的设计师需要时间。这需要进行无数单调的设计迭代，并通过不断试错最终获得经验并掌握正确的方法。刚入行的年轻设计师往往不理解这一点。**如果你局限于你的日常工作当中，你的设计能力不太可能得到显著提升**。想要精于创造就是要热爱学习，并花费数以千计的时间来精进，成熟以及变得更好。这听起来很吓人，但是如果你热爱并想精通于一件事，那么时间就并不重要。你必须投入其中以完善自己的技艺，非常简单。
 
-我听过一个我喜欢的创意工作室Young Jerks的Instagram线上访谈，他们提到了努力非常具体的一个方面。有人问到：“你是如何让你技能提升到你的审美水平的？”，这是如此简单但又精彩的问题，每个想要变得更好的都会问自己。唯一的答案就是练习，练习需要时间和努力。我曾对字体选择、最终色彩、正式决策、字间距调整等等（设计相关事宜）感到痛苦。为什么？因为我总认为可以做的更好，我能感觉到问题所在，并且假以时间我肯定能发现问题所在。这种感觉从未离我而去。将想法从创意阶段带入现实、历经考验且给他人带来积极影响，这可能确实是一件意味深远的事。这是每首伟大颂歌的意义[^9]，也是伟大设计的意义。 艰苦的工作并不能保证拥有辉煌，而只是为更可能发生的事情奠定了基础。
+我听过一个我喜欢的创意工作室Young Jerks的Instagram线上访谈，他们提到了努力非常具体的一个方面。有人问到：“你是如何让你技能提升到你的审美水平的？”，这是如此简单但又精彩的问题，每个想要变得更好的都会问自己。唯一的答案就是练习，练习需要时间和努力。我曾对字体选择、最终色彩、正式决策、字间距调整等等（设计相关事宜）感到痛苦。为什么？因为我总认为可以做的更好，我能感觉到问题所在，并且假以时间我肯定能发现问题所在。这种感觉从未离我而去。将想法从创意阶段带入现实、历经考验且给他人带来积极影响，这可能确实是一件意味深远的事。这是每首伟大颂歌的意义\[^9\]，也是伟大设计的意义。 艰苦的工作并不能保证拥有辉煌，而只是为更可能发生的事情奠定了基础。
 
-[^9]: 原文是 “It’s what every great song is about”，实在没搞懂放在这里的意思是什么..
+\[^9\]: 原文是 “It’s what every great song is about”，实在没搞懂放在这里的意思是什么..
 
 我希望上面的箴言对你有所帮助。它们帮助我度过了我创意和专业工作的高潮和低谷，但是每个人的信仰总是在不断变化的。感谢阅读
