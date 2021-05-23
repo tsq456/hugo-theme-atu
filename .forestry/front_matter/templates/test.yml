@@ -11,3 +11,15 @@ fields:
 - type: text
   name: layout
   label: layout
+- name: '1111'
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: '1111'
