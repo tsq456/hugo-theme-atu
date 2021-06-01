@@ -32,9 +32,17 @@
         .vpanel {
             border-radius: unset;
             border: 0px;
-            .vheader {
-                border-bottom: 1px solid $divider-color;            
-            }
+        }
+    }
+    .v[data-class=v] .vlogin-btn {
+        border: $divider-color
+    }
+    @media screen and (max-width: 580px) {
+        .v[data-class=v] .vheader .vheader-item {
+            border-bottom: 1px solid $divider-color
+        }
+        .v[data-class=v] .vheader {
+            border-bottom: unset
         }
     }
 }
