@@ -5,15 +5,22 @@
             fill: $accent-color;
         }
     }
-    .vbtn:hover {
-        border-color: $accent-color !important;
-        color: $accent-color !important;
-        transition-duration: .2s !important
+    .v[data-class=v] .vbtn:hover {
+        border-color: $accent-color;
+        color: $accent-color;
+    }
+    .v[data-class=v] .vbtn.primary {
+        border-color: $accent-color;
+        background-color: $accent-color;
+        &:hover {
+            background-color: lighten($color: $accent-color, $amount: 10%);
+            border-color: lighten($color: $accent-color, $amount: 10%);
+            transition: .2s all ease-in;
+            color: white;
+        }
     }
     .veditor {
-        padding: 10px;
-        border-radius: 0;
-        width: calc(100% - 1.5em);
+        font-family: $default-font;
         &:focus {
             background-color: transparent !important;
         }
@@ -34,9 +41,13 @@
             border: 0px;
         }
     }
-    .v[data-class=v] .vlogin-btn {
-        border: $divider-color
+    .v[data-class=v] .vheader {
+        border-bottom: 1px solid $divider-color
     }
+    .vaction svg:hover {
+        fill: $accent-color;
+    }
+
     @media screen and (max-width: 580px) {
         .v[data-class=v] .vheader .vheader-item {
             border-bottom: 1px solid $divider-color
