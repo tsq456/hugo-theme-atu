@@ -7,7 +7,7 @@
     {{ $mainJS := resources.Get "js/main.js" | resources.Minify }}
     <script src="{{ $mainJS.Permalink }}"></script>
   {{ end }}
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   {{/*  word counter  */}}
   {{$scratch := newScratch}}
