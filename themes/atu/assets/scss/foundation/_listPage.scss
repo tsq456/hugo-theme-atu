@@ -129,6 +129,8 @@
             @media screen and (max-width:640px) {
                 display: block;
             } 
+            display: inline-block;
+            margin-top: pxTorem(16px);
             margin-right: pxTorem(20px);
             padding: 4px;
             span {
