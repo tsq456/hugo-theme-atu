@@ -28,7 +28,7 @@ description = "阿凸的个人博客，主要记录个人生活及工作感悟�
   posts = "/:year/:month/:filename/"
 
 [frontmatter]
-  lastmod = ["lastmod", ":fileModTime", ":default"]
+  lastmod = [":git", "lastmod", ":fileModTime", ":default"]
 
 [markup]
   [markup.highlight]
