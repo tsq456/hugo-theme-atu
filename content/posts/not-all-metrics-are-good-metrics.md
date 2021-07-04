@@ -3,7 +3,7 @@ title: "【译】并非所有指标都是好指标"
 date: 2021-07-04T17:48:35+08:00
 tags: [产品,数据]
 categories: [翻译]
-draft: true
+draft: false
 description: ""
 cover_image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=70"
 comment : true
