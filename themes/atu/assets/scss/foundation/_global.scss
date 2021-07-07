@@ -82,7 +82,7 @@ blockquote {
     background-color: $quota-bg-color;
     margin: 2rem -4rem;
     padding: 2rem 4rem;
-    font-family: $accent-font;
+    font-family: "Fira Code", $accent-font;
     position: relative;
     z-index: 0;
     @media screen and (max-width:640px) {
