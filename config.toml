@@ -17,7 +17,7 @@ enableRobotsTXT = true
   Priority = "0.5"
 
 [Params]
-enableComment = false
+enableComment = true
 description = "阿凸的个人博客，主要记录个人生活及工作感悟。梦想遥不可及，因而陷入妄想"
 
 [taxonomies]
