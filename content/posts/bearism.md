@@ -3,7 +3,7 @@ title: "狗熊主义 - BEARISM"
 date: 2021-07-09T20:15:25+08:00
 tags: [杂记]
 categories: [生活]
-draft: false
+draft: true
 description: ""
 cover_image: "https://images.unsplash.com/photo-1573553557077-4cda64089870?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 comment : true

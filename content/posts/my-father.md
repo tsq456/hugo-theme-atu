@@ -3,7 +3,7 @@ title: "我与父亲"
 date: 2021-06-21T08:29:21+08:00
 tags: [杂记]
 categories: [生活]
-draft: false
+draft: true
 description: ""
 cover_image: "https://img.atutang.com/father/on-the-beach.jpg"
 comment : true
